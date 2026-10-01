@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Broadarks Foundation
 
-## Getting Started
+Scroll-driven marketing site for a (fictional) Indian non-profit, built with
+Next.js 16 (App Router), Tailwind v4, Motion and Lenis.
 
-First, run the development server:
+## Run it
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev     # http://localhost:3000
+npm run build && npm run start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Pages
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Route            | What's on it                                                        |
+| ---------------- | ------------------------------------------------------------------- |
+| `/`              | Hero, ticker, mission, stats, pinned horizontal programmes, sticky story stack, parallax gallery, partners, journal preview, CTA |
+| `/about`         | Founder letter, values, timeline, team                              |
+| `/work`          | The five programme pillars in detail + method + numbers             |
+| `/impact`        | Five long-form impact stories                                       |
+| `/blog`          | Journal index                                                       |
+| `/blog/[slug]`   | Three hardcoded posts with a reading-progress bar                   |
+| `/contact`       | Animated form (client-side only), offices, FAQ                      |
+| `/donate`        | Interactive amount picker with live giving summary, fund split, FAQ |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Where to change things
 
-## Learn More
+- **All copy and data** — `lib/content.ts` (programmes, stories, posts, team, FAQs, giving tiers, nav, org details).
+- **All photography** — `lib/images.ts`. Every image is one Unsplash photo id in
+  the `IMG` map; swap an id for your own CDN path (or a local `/public` file) and
+  it updates everywhere it's used. `img(id, width)` builds the URL.
+  These are placeholders — replace with real field photography before launch.
+- **Colours** — `app/globals.css` (`@theme` block). Brand is `#27aae1`
+  (`brand`), text is `#062a3c` (`ink`), plus `sand`, `sky-*` tints.
+- **Type** — three classes in `globals.css`, applied deliberately:
+  - `.display` — Instrument Sans. Every heading and all UI. This carries the reading.
+  - `.serif` — Instrument Serif. Accent only: the lifted phrase in a headline,
+    pull quotes, the wordmark, the marquees. Never a whole paragraph.
+  - `.numeral` — Instrument Serif figures, so statistics and rupee amounts read
+    as a highlight rather than as UI.
 
-To learn more about Next.js, take a look at the following resources:
+  Body copy is Geist Sans; eyebrow labels are Geist Mono (`.eyebrow`).
+- **Motion primitives** — `components/motion/`: `Reveal`, `SplitWords`,
+  `RevealImage`, `Parallax`, `Counter`, `Marquee`, `Magnetic`, `ScrollProgress`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Not wired up yet
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- The contact form doesn't post anywhere — it fakes a success state.
+- The donate button doesn't take payments — connect Razorpay or Stripe.
+- Social links point at bare domains.
