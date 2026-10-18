@@ -65,9 +65,6 @@ export default function Hero() {
         <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-ink/70 to-transparent" />
       </motion.div>
 
-      {/* thin brand rail */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-20 hidden w-[3px] bg-brand/70 lg:block" />
-
       <div className="shell relative z-10 flex min-h-[100svh] items-end pb-16 pt-32 lg:pb-24">
         <motion.div style={{ y: textY, opacity: fade }} className="max-w-[76rem]">
           <motion.div
