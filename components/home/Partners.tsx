@@ -1,8 +1,12 @@
 import Image from "next/image";
 import Marquee from "@/components/motion/Marquee";
 import Reveal from "@/components/motion/Reveal";
+import Counter from "@/components/motion/Counter";
 import { PARTNERS } from "@/lib/content";
 import { IMG, img } from "@/lib/images";
+import { HOME_COPY } from "@/lib/homeCopy";
+
+const C = HOME_COPY.partners;
 
 export default function Partners() {
   return (
@@ -12,15 +16,26 @@ export default function Partners() {
           <p className="eyebrow mb-6 text-ink-50">
             <span className="text-brand">06</span>
             <span className="mx-3 inline-block h-px w-8 translate-y-[-3px] bg-ink/20" />
-            Who funds this
+            {C.eyebrow}
           </p>
-          <p className="serif text-[1.85rem] leading-snug text-ink">
-            Twenty-eight institutional partners, and eleven thousand people who
-            give under ₹1,000 a month.
+          <h2 className="serif text-[1.85rem] leading-snug text-ink">{C.title}</h2>
+          <p className="serif mt-5 text-[1.2rem] italic leading-snug text-brand-700">
+            {C.sub}
           </p>
+          <p className="mt-5 text-[0.95rem] leading-relaxed text-ink-70">{C.body}</p>
         </Reveal>
 
         <Reveal delay={0.15} className="lg:col-span-6 lg:col-start-7">
+          <div className="mb-14 grid grid-cols-2 gap-8">
+            {C.metrics.map((m) => (
+              <div key={m.label} className="border-t border-ink/15 pt-6">
+                <p className="numeral text-[3.2rem] text-brand sm:text-[3.9rem]">
+                  <Counter to={m.value} suffix={m.suffix} group />
+                </p>
+                <p className="mt-3 text-[1.05rem] text-ink">{m.label}</p>
+              </div>
+            ))}
+          </div>
           <figure className="border-l-2 border-brand pl-7">
             <blockquote className="serif text-[1.5rem] italic leading-snug text-ink md:text-[1.8rem]">
               “We have funded a lot of education work. Broadarks is the only

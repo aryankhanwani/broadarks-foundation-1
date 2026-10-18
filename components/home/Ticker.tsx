@@ -1,14 +1,7 @@
 import Marquee from "@/components/motion/Marquee";
+import { HOME_COPY } from "@/lib/homeCopy";
 
-const ITEMS = [
-  "63 learning centres",
-  "180 community health workers",
-  "2.1M meals served",
-  "48 women's collectives",
-  "34 solar micro-grids",
-  "412 communities",
-  "91% reaches the field",
-];
+const ITEMS = HOME_COPY.ticker;
 
 export default function Ticker() {
   return (

@@ -9,6 +9,7 @@ import Partners from "@/components/home/Partners";
 import JournalPreview from "@/components/home/JournalPreview";
 import CTABand from "@/components/CTABand";
 import { IMG } from "@/lib/images";
+import { HOME_COPY } from "@/lib/homeCopy";
 
 export default function HomePage() {
   return (
@@ -24,9 +25,12 @@ export default function HomePage() {
       <JournalPreview />
       <CTABand
         image={IMG.groupHug}
-        title="₹1,000 is a month of school."
-        lead="It is also a hot meal every weekday, a library card, and one adult who knows the child's name and uses it."
-        secondary={{ href: "/contact", label: "Talk to us instead" }}
+        eyebrow={HOME_COPY.cta.eyebrow}
+        title={HOME_COPY.cta.title}
+        sub={HOME_COPY.cta.sub}
+        lead={HOME_COPY.cta.lead}
+        primary={HOME_COPY.cta.primary}
+        secondary={HOME_COPY.cta.secondary}
       />
     </>
   );

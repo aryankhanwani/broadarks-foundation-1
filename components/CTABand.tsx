@@ -9,6 +9,7 @@ export default function CTABand({
   image,
   eyebrow = "Take part",
   title,
+  sub,
   lead,
   primary = { href: "/donate", label: "Donate now" },
   secondary,
@@ -16,6 +17,7 @@ export default function CTABand({
   image: string;
   eyebrow?: string;
   title: string;
+  sub?: string;
   lead: string;
   primary?: { href: string; label: string };
   secondary?: { href: string; label: string };
@@ -35,6 +37,13 @@ export default function CTABand({
           text={title}
           className="display mx-auto max-w-[18ch] text-[2.26rem] leading-[1.02] text-white sm:text-[3.13rem] lg:text-[3.83rem]"
         />
+        {sub && (
+          <Reveal delay={0.15}>
+            <p className="serif mx-auto mt-7 max-w-[40ch] text-[1.25rem] italic leading-snug text-brand md:text-[1.4rem]">
+              {sub}
+            </p>
+          </Reveal>
+        )}
         <Reveal delay={0.2}>
           <p className="mx-auto mt-8 max-w-[50ch] text-[1.05rem] leading-relaxed text-white/70">
             {lead}

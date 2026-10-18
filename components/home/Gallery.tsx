@@ -6,6 +6,9 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { IMG, img } from "@/lib/images";
 import SplitWords from "@/components/motion/SplitWords";
 import Reveal from "@/components/motion/Reveal";
+import { HOME_COPY } from "@/lib/homeCopy";
+
+const C = HOME_COPY.gallery;
 
 const COLS: { id: string; alt: string; ratio: string }[][] = [
   [
@@ -68,18 +71,22 @@ export default function Gallery() {
               <p className="eyebrow mb-5 text-ink-50">
                 <span className="text-brand">05</span>
                 <span className="mx-3 inline-block h-px w-8 translate-y-[-3px] bg-ink/20" />
-                From the field
+                {C.eyebrow}
               </p>
             </Reveal>
             <SplitWords
-              text="Ordinary days, mostly."
-              className="display text-[2.09rem] leading-[1.02] text-ink sm:text-[2.78rem]"
+              text={C.title}
+              className="display max-w-[22ch] text-[2.09rem] leading-[1.02] text-ink sm:text-[2.78rem]"
             />
+            <Reveal delay={0.15}>
+              <p className="serif mt-5 text-[1.2rem] italic leading-snug text-brand-700 md:text-[1.3rem]">
+                {C.sub}
+              </p>
+            </Reveal>
           </div>
           <Reveal delay={0.2}>
             <p className="max-w-[38ch] text-[0.95rem] leading-relaxed text-ink-70">
-              No staged smiles, no before-and-afters. This is what a Tuesday
-              looks like across our centres.
+              {C.body}
             </p>
           </Reveal>
         </div>
@@ -90,6 +97,15 @@ export default function Gallery() {
         <Col items={COLS[1]} speed={-40} />
         <Col items={COLS[2]} speed={62} />
         <Col items={COLS[3]} speed={-28} />
+      </div>
+
+      <div className="shell">
+        <Reveal y={14}>
+          <p className="mt-16 flex flex-col gap-2 border-t border-line pt-6 text-[0.95rem] text-ink-70 sm:flex-row sm:items-baseline sm:gap-6">
+            <span className="eyebrow shrink-0 text-brand">{C.caption.k}</span>
+            {C.caption.v}
+          </p>
+        </Reveal>
       </div>
     </section>
   );

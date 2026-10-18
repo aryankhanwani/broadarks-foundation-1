@@ -8,6 +8,9 @@ import { STORIES } from "@/lib/content";
 import { img } from "@/lib/images";
 import SplitWords from "@/components/motion/SplitWords";
 import Reveal from "@/components/motion/Reveal";
+import { HOME_COPY } from "@/lib/homeCopy";
+
+const C = HOME_COPY.stories;
 
 function Card({ story, i, total }: { story: (typeof STORIES)[number]; i: number; total: number }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -41,7 +44,7 @@ function Card({ story, i, total }: { story: (typeof STORIES)[number]; i: number;
             className="object-cover"
           />
           <span className="absolute left-5 top-5 bg-brand px-3 py-1.5 eyebrow text-white">
-            {story.program}
+            {i === 0 ? C.tag : story.program}
           </span>
         </div>
 
@@ -101,17 +104,21 @@ export default function StoriesStack() {
               <p className="eyebrow mb-5 text-ink-50">
                 <span className="text-brand">04</span>
                 <span className="mx-3 inline-block h-px w-8 translate-y-[-3px] bg-ink/20" />
-                Impact stories
+                {C.eyebrow}
               </p>
             </Reveal>
             <SplitWords
-              text="The number is a person, first."
+              text={C.title}
               className="display max-w-[15ch] text-[2.09rem] leading-[1.02] text-ink sm:text-[2.78rem] lg:text-[3.31rem]"
             />
           </div>
-          <Reveal delay={0.2}>
-            <Link href="/impact" className="link-underline pb-2 text-sm text-ink">
-              All stories →
+          <Reveal delay={0.2} className="max-w-[42ch]">
+            <p className="serif text-[1.2rem] italic leading-snug text-brand-700 md:text-[1.3rem]">
+              {C.sub}
+            </p>
+            <p className="mt-4 text-[0.95rem] leading-relaxed text-ink-70">{C.body}</p>
+            <Link href="/impact" className="link-underline mt-6 inline-block pb-2 text-sm text-ink">
+              {C.link}
             </Link>
           </Reveal>
         </div>

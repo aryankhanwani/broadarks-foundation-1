@@ -8,6 +8,10 @@ import { PROGRAMS } from "@/lib/content";
 import { img } from "@/lib/images";
 import SplitWords from "@/components/motion/SplitWords";
 import Reveal from "@/components/motion/Reveal";
+import { HOME_COPY } from "@/lib/homeCopy";
+
+const C = HOME_COPY.programs;
+const CARDS = PROGRAMS.map((p, i) => ({ ...p, ...C.cards?.[i] }));
 
 /** Pinned section: vertical scroll drives a horizontal run through the pillars. */
 export default function ProgramsScroll() {
@@ -46,14 +50,20 @@ export default function ProgramsScroll() {
           <p className="eyebrow mb-6 text-ink-50">
             <span className="text-brand">03</span>
             <span className="mx-3 inline-block h-px w-8 translate-y-[-3px] bg-ink/20" />
-            The work
+            {C.eyebrow}
           </p>
           <SplitWords
-            text="Five pillars, one arc."
+            text={`${C.title} ${C.accent}`}
             className="display text-[2.26rem] leading-[1.02] text-ink"
           />
+          <Reveal delay={0.15}>
+            <p className="serif mt-6 text-[1.2rem] italic leading-snug text-brand-700">
+              {C.sub}
+            </p>
+            <p className="mt-5 text-[0.95rem] leading-relaxed text-ink-70">{C.body}</p>
+          </Reveal>
           <div className="mt-12 space-y-10">
-            {PROGRAMS.map((p) => (
+            {CARDS.map((p) => (
               <Reveal key={p.slug}>
                 <Link href={`/work#${p.slug}`} className="block">
                   <div className="relative aspect-[4/3] w-full overflow-hidden">
@@ -89,24 +99,27 @@ export default function ProgramsScroll() {
               <p className="eyebrow mb-5 text-ink-50">
                 <span className="text-brand">03</span>
                 <span className="mx-3 inline-block h-px w-8 translate-y-[-3px] bg-ink/20" />
-                The work
+                {C.eyebrow}
               </p>
               <h2 className="display max-w-[16ch] text-[2.96rem] leading-[1.0] text-ink">
-                Five pillars,{" "}
-                <span className="serif text-[1.06em] italic text-brand">one arc.</span>
+                {C.title}{" "}
+                <span className="serif text-[1.06em] italic text-brand">{C.accent}</span>
               </h2>
             </div>
-            <div className="hidden max-w-[34ch] pb-2 xl:block">
-              <p className="text-[0.95rem] leading-relaxed text-ink-70">
-                They are not separate programmes running in parallel. A meal
-                holds up a lesson; a lesson holds up a livelihood. We fund the
-                whole chain or none of it.
+            <div className="max-w-[34ch] pb-2">
+              <p className="serif text-[1.3rem] italic leading-snug text-brand-700">
+                {C.sub}
               </p>
             </div>
           </div>
 
           <motion.div ref={trackRef} style={{ x }} className="flex gap-6 pl-5 md:pl-10 xl:pl-14">
-            {PROGRAMS.map((p) => (
+            <div className="flex w-[clamp(320px,29vw,440px)] shrink-0 items-center pr-4">
+              <p className="border-l-2 border-brand pl-6 text-[1.02rem] leading-relaxed text-ink-70">
+                {C.body}
+              </p>
+            </div>
+            {CARDS.map((p) => (
               <Link
                 key={p.slug}
                 href={`/work#${p.slug}`}
@@ -146,9 +159,13 @@ export default function ProgramsScroll() {
             <div className="flex w-[30vw] shrink-0 items-center pl-6">
               <Link href="/work" className="group">
                 <p className="display text-[2.09rem] leading-tight text-ink">
-                  All five,
-                  <br />
-                  in detail
+                  {C.link ?? (
+                    <>
+                      All five,
+                      <br />
+                      in detail
+                    </>
+                  )}
                 </p>
                 <span className="mt-4 inline-flex h-14 w-14 items-center justify-center rounded-full border border-ink/25 transition-colors duration-500 group-hover:bg-brand group-hover:text-white">
                   →

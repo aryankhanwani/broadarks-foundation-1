@@ -13,6 +13,8 @@ export default function Nav() {
   const [hidden, setHidden] = useState(false);
   const [open, setOpen] = useState(false);
   const { scrollY } = useScroll();
+  /** Transparent over the homepage's dark video hero, so the bar goes light. */
+  const overHero = pathname === "/" && !solid && !open;
 
   useMotionValueEvent(scrollY, "change", (y) => {
     const prev = scrollY.getPrevious() ?? 0;
@@ -47,7 +49,7 @@ export default function Nav() {
               aria-label={SITE.name}
               onClick={() => setOpen(false)}
               className={`relative z-50 transition-colors duration-300 ${
-                open ? "text-white" : "text-ink"
+                open || overHero ? "text-white" : "text-ink"
               }`}
             >
               <Logo />
@@ -63,7 +65,9 @@ export default function Nav() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="group relative py-2 text-sm text-ink/80 transition-colors hover:text-ink"
+                    className={`group relative py-2 text-sm transition-colors ${
+                      overHero ? "text-white/80 hover:text-white" : "text-ink/80 hover:text-ink"
+                    }`}
                   >
                     {item.label}
                     <span
@@ -90,20 +94,20 @@ export default function Nav() {
                 aria-label={open ? "Close menu" : "Open menu"}
                 aria-expanded={open}
                 className={`relative z-50 flex h-11 w-11 items-center justify-center rounded-full border transition-colors duration-300 lg:hidden ${
-                  open ? "border-white/30" : "border-line"
+                  open || overHero ? "border-white/30" : "border-line"
                 }`}
               >
                 <span className="relative block h-3 w-5">
                   <motion.span
                     animate={{ rotate: open ? 45 : 0, y: open ? 5 : 0 }}
                     className={`absolute inset-x-0 top-0 h-[1.5px] transition-colors duration-300 ${
-                      open ? "bg-white" : "bg-ink"
+                      open || overHero ? "bg-white" : "bg-ink"
                     }`}
                   />
                   <motion.span
                     animate={{ rotate: open ? -45 : 0, y: open ? -5 : 0 }}
                     className={`absolute inset-x-0 bottom-0 h-[1.5px] transition-colors duration-300 ${
-                      open ? "bg-white" : "bg-ink"
+                      open || overHero ? "bg-white" : "bg-ink"
                     }`}
                   />
                 </span>
