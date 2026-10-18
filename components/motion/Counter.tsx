@@ -7,10 +7,13 @@ export default function Counter({
   to,
   suffix = "",
   decimals = 0,
+  group = false,
 }: {
   to: number;
   suffix?: string;
   decimals?: number;
+  /** Thousands separators, e.g. 11,000. */
+  group?: boolean;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.6 });
@@ -23,8 +26,18 @@ export default function Counter({
   }, [inView, mv, to]);
 
   useEffect(
-    () => spring.on("change", (v) => setDisplay(v.toFixed(decimals))),
-    [spring, decimals]
+    () =>
+      spring.on("change", (v) =>
+        setDisplay(
+          group
+            ? v.toLocaleString("en-US", {
+                minimumFractionDigits: decimals,
+                maximumFractionDigits: decimals,
+              })
+            : v.toFixed(decimals)
+        )
+      ),
+    [spring, decimals, group]
   );
 
   return (
