@@ -9,6 +9,12 @@ export const metadata: Metadata = {
 };
 
 const G = PRIVACY.grievance;
+const N = PRIVACY.sections.length;
+
+/** Every section after the first sits below a rule with room either side. */
+const SECTION = "scroll-mt-32 border-t border-line pt-12 mt-12 first:mt-0 first:border-t-0 first:pt-0";
+const H2 = "display text-[1.5rem] leading-tight text-ink";
+const num = (n: number) => <span className="mr-2 text-brand">{n}.</span>;
 
 export default function PrivacyPage() {
   return (
@@ -33,18 +39,18 @@ export default function PrivacyPage() {
               {PRIVACY.sections.map((s, i) => (
                 <li key={s.title}>
                   <a href={`#s${i + 1}`} className="link-underline text-ink-70 hover:text-ink">
-                    {s.title}
+                    {i + 1}. {s.title}
                   </a>
                 </li>
               ))}
               <li>
                 <a href="#grievance" className="link-underline text-ink-70 hover:text-ink">
-                  Privacy contact and Grievance Officer
+                  {N + 1}. Privacy contact and Grievance Officer
                 </a>
               </li>
               <li>
                 <a href="#changes" className="link-underline text-ink-70 hover:text-ink">
-                  Changes to this policy
+                  {N + 2}. Changes to this policy
                 </a>
               </li>
             </ol>
@@ -53,8 +59,9 @@ export default function PrivacyPage() {
 
         <div className="max-w-[68ch] lg:col-span-8 lg:col-start-5">
           {PRIVACY.sections.map((s, i) => (
-            <section key={s.title} id={`s${i + 1}`} className="scroll-mt-32">
-              <h2 className="display mt-14 text-[1.5rem] leading-tight text-ink first:mt-0">
+            <section key={s.title} id={`s${i + 1}`} className={SECTION}>
+              <h2 className={H2}>
+                {num(i + 1)}
                 {s.title}
               </h2>
               {s.body.map((b, j) =>
@@ -76,8 +83,9 @@ export default function PrivacyPage() {
             </section>
           ))}
 
-          <section id="grievance" className="mt-14 scroll-mt-32 border-y border-line py-8">
-            <h2 className="display text-[1.5rem] leading-tight text-ink">
+          <section id="grievance" className={SECTION}>
+            <h2 className={H2}>
+              {num(N + 1)}
               Privacy contact and Grievance Officer
             </h2>
             <address className="mt-5 space-y-1 not-italic leading-relaxed text-ink-70">
@@ -101,8 +109,9 @@ export default function PrivacyPage() {
             </address>
           </section>
 
-          <section id="changes" className="scroll-mt-32">
-            <h2 className="display mt-14 text-[1.5rem] leading-tight text-ink">
+          <section id="changes" className={SECTION}>
+            <h2 className={H2}>
+              {num(N + 2)}
               Changes to this policy
             </h2>
             <p className="mt-5 leading-relaxed text-ink-70">{PRIVACY.changes}</p>
