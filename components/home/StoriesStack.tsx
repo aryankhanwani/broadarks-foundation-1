@@ -12,7 +12,15 @@ import { HOME_COPY } from "@/lib/homeCopy";
 
 const C = HOME_COPY.stories;
 
-function Card({ story, i, total }: { story: (typeof STORIES)[number]; i: number; total: number }) {
+function Card({
+  story,
+  i,
+  total,
+}: {
+  story: (typeof STORIES)[number];
+  i: number;
+  total: number;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -21,18 +29,19 @@ function Card({ story, i, total }: { story: (typeof STORIES)[number]; i: number;
   const scale = useTransform(scrollYProgress, [0, 1], [0.94, 1]);
 
   /**
-   * Each card gets its own full-height sticky slot, so it pins centred in the
-   * viewport rather than hanging off the top. The per-card offset keeps a sliver
-   * of the card beneath visible once they overlap.
+   * From md up each card pins at its natural height, stepped down a little per
+   * card so a sliver of the one beneath stays visible. Scroll distance is just
+   * the cards themselves — no full-viewport slots to scroll through. Phones get
+   * a plain list, since a card there can be taller than the screen.
    */
   return (
     <div
       ref={ref}
-      className="sticky top-0 flex h-[100svh] items-center py-6 md:py-16"
-      style={{ zIndex: i + 1 }}
+      className="mb-6 last:mb-0 md:sticky md:top-[var(--pin)] md:mb-[12vh]"
+      style={{ zIndex: i + 1, "--pin": `calc(12vh + ${i * 16}px)` } as React.CSSProperties}
     >
       <motion.article
-        style={{ scale, y: i * 14 }}
+        style={{ scale }}
         className="grid w-full overflow-hidden border border-line bg-white shadow-[0_30px_80px_-50px_rgba(6,42,60,0.55)] md:grid-cols-2"
       >
         <div className="relative aspect-[16/9] sm:aspect-[2/1] md:aspect-auto md:min-h-[28rem]">
@@ -123,7 +132,7 @@ export default function StoriesStack() {
           </Reveal>
         </div>
 
-        <div className="pb-[10vh]">
+        <div>
           {STORIES.slice(0, 4).map((s, i) => (
             <Card key={s.slug} story={s} i={i} total={4} />
           ))}
