@@ -52,7 +52,7 @@ export default function Nav() {
                 open || overHero ? "text-white" : "text-ink"
               }`}
             >
-              <Logo />
+              <Logo tone={open || overHero ? "light" : "dark"} />
             </Link>
 
             <nav className="hidden items-center gap-9 lg:flex">

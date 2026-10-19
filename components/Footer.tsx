@@ -95,7 +95,7 @@ export default function Footer() {
 
         <div className="mt-20 flex flex-col gap-6 border-t border-white/10 pt-8 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between">
           <Link href="/" className="text-white/70">
-            <Logo />
+            <Logo tone="light" />
           </Link>
           <p className="max-w-md">{SITE.regd}</p>
           <p>© {new Date().getFullYear()} {SITE.name}</p>
