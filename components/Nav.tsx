@@ -159,7 +159,7 @@ export default function Nav() {
               className="space-y-2 text-sm text-white/55"
             >
               <p>{SITE.email}</p>
-              <p>{SITE.phone}</p>
+              <p>{SITE.phones.join(" · ")}</p>
             </motion.div>
           </motion.div>
         )}
