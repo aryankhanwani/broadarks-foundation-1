@@ -49,6 +49,9 @@ export type Program = {
   title: string;
   kicker: string;
   blurb: string;
+  /** The Work page: headline, sub-headline and body. */
+  headline: string;
+  sub: string;
   detail: string;
   image: string;
   secondary: string;
@@ -63,8 +66,10 @@ export const PROGRAMS: Program[] = [
     kicker: "Education",
     blurb:
       "Neighbourhood learning centres, bridge classes and libraries that meet a child where they already are.",
+    headline: "Accessible learning infrastructure and bridge education",
+    sub: "Settlement-based learning centres enabling school re-entry and continuous growth.",
     detail:
-      "We run 63 learning centres inside the settlements themselves — no bus fare, no gatekeeping. Children who had dropped out for two or three years come back through bridge classes, then re-enter government schools at the right grade. Every centre keeps a lending library and a teacher who lives within walking distance.",
+      "We operate 63 learning centres directly inside settlements to eliminate transportation and financial barriers. Children previously out of school for two to three years complete specialized bridge classes to re-enter government schools at their age-appropriate grade. Each centre integrates a community lending library and is staffed by local educators residing within walking distance.",
     image: IMG.classroomFloor,
     secondary: IMG.library,
     metrics: [
@@ -80,8 +85,10 @@ export const PROGRAMS: Program[] = [
     kicker: "Health",
     blurb:
       "Mobile clinics, community health workers and maternal care that arrives before the emergency does.",
+    headline: "Preventive healthcare infrastructure and primary medical access",
+    sub: "Mobile medical units and community health networks delivering last-mile care.",
     detail:
-      "Four mobile units and 180 trained community health workers cover wards where the nearest clinic is an hour away. The work is unglamorous and preventive: antenatal check-ups, anaemia screening, vaccination follow-through, and a referral network that actually answers the phone.",
+      "Four mobile units and 180 trained community health workers serve wards located over an hour from the nearest medical facility. The operations focus on structured preventive care: antenatal consultations, anaemia screenings, vaccination tracking, and a reliable secondary referral pipeline.",
     image: IMG.clinicianPhone,
     secondary: IMG.careHands,
     metrics: [
@@ -97,8 +104,10 @@ export const PROGRAMS: Program[] = [
     kicker: "Livelihood",
     blurb:
       "Skilling, self-help collectives and market linkage — so income outlives the training certificate.",
+    headline: "Market-linked vocational training and independent enterprise aggregation",
+    sub: "Sustainable income frameworks building self-reliant community cooperatives.",
     detail:
-      "We don't stop at a certificate. Cohorts move through skilling, then into placement or a collective enterprise we help register, bank and connect to buyers. Women's producer groups in Jharkhand and Bihar now negotiate their own rates.",
+      "We extend outcomes beyond vocational certification. Cohorts complete specialized training before transitioning directly into formal employment or registered producer collectives equipped with banking access and established market linkages. Women's producer groups across Jharkhand and Bihar now independently manage commercial negotiations and trade pricing.",
     image: IMG.workshop,
     secondary: IMG.collaborate,
     metrics: [
@@ -114,8 +123,10 @@ export const PROGRAMS: Program[] = [
     kicker: "Nutrition",
     blurb:
       "Community kitchens, ration support and growth monitoring for the first thousand days.",
+    headline: "Upstream nutritional security and early childhood growth support",
+    sub: "Community-run kitchens and vital nutritional interventions for foundational development.",
     detail:
-      "A hungry child cannot learn, so nutrition sits upstream of everything else we do. Community kitchens run by local women serve hot meals at learning centres, while growth monitoring catches wasting early enough to reverse it.",
+      "A hungry child cannot learn; consequently, nutrition sits upstream of every intervention we deploy. Community kitchens managed by local women provide hot meals directly at our learning centres, while active growth monitoring identifies and reverses nutritional wasting in its earliest stages.",
     image: IMG.foodRelief,
     secondary: IMG.reliefTruck,
     metrics: [
@@ -131,8 +142,10 @@ export const PROGRAMS: Program[] = [
     kicker: "Climate & Energy",
     blurb:
       "Solar micro-grids, water stewardship and green livelihoods built and maintained by the village itself.",
+    headline: "Decentralized energy infrastructure and rural water stewardship",
+    sub: "Community-managed clean energy and water systems engineered for long-term autonomy.",
     detail:
-      "Solar micro-grids, rooftop installations for schools and clinics, and rainwater structures — each handed over to a village committee trained to maintain it. The test we set ourselves: can it run for five years after we leave?",
+      "We deploy solar micro-grids, rooftop installations for schools and clinics, and rainwater harvesting structures—each fully transferred to trained village committees responsible for ongoing maintenance. Our primary operational benchmark: every infrastructure installation must remain fully operational five years post-exit.",
     image: IMG.solar,
     secondary: IMG.sunsetFriends,
     metrics: [
@@ -408,34 +421,34 @@ export const POSTS: Post[] = [
 ];
 
 export const TIMELINE = [
-  { year: "2014", title: "Two rooms in Seelampur", text: "Forty children, three volunteers, one rented room with a fan that worked half the time." },
-  { year: "2017", title: "The first mobile clinic", text: "A second-hand van, a nurse and a fortnightly route across eleven wards." },
-  { year: "2019", title: "Beyond Delhi", text: "Programmes open in Jharkhand and Rajasthan. Staff count crosses fifty." },
-  { year: "2021", title: "The five-year test", text: "We begin auditing every programme five years after exit — and start publishing what failed." },
-  { year: "2023", title: "Collectives take over", text: "Forty-eight women's producer collectives registered and trading independently." },
-  { year: "2026", title: "412 communities", text: "Nine states, 63 learning centres, and a commitment to hand every one of them over." },
+  { year: "2014", title: "Initial community intervention", text: "BroadArks Foundation originated in Seelampur, East Delhi, serving forty children through a three-volunteer team in a single rented facility." },
+  { year: "2017", title: "Mobile health infrastructure launch", text: "Deployment of our initial mobile healthcare unit, deploying a nursing professional across an eleven-ward bi-weekly service route." },
+  { year: "2019", title: "Multi-state operational expansion", text: "Geographic reach expanded into Jharkhand and Rajasthan, scaling permanent operational staff past fifty team members." },
+  { year: "2021", title: "Institutionalization of post-exit auditing", text: "Implementation of mandatory five-year post-exit evaluations, establishing public disclosures for non-performing outcomes alongside successful metrics." },
+  { year: "2023", title: "Transition to independent community governance", text: "Successful handover and formal registration of forty-eight women-led producer collectives operating with full financial and administrative independence." },
+  { year: "2026", title: "Current scale and handover pipeline", text: "Operations active across 412 communities in nine states, encompassing 63 learning centres structured for complete local ownership transfer." },
 ];
 
 export const VALUES = [
   {
     n: "01",
     title: "Proximity over scale",
-    text: "We would rather be four hundred metres away in one settlement than nominally present in forty.",
+    text: "We prioritize deep, localized implementation over superficial geographic reach, focusing resources directly within targeted settlements rather than establishing nominal coverage across multiple areas.",
   },
   {
     n: "02",
     title: "Hand it over",
-    text: "Every programme is designed backwards from the day we leave. If it needs us in year six, we built it wrong.",
+    text: "Every programme is engineered with an exit-driven design from inception. If an initiative requires our ongoing management after five years, the framework failed to build adequate local autonomy.",
   },
   {
     n: "03",
     title: "Publish the failures",
-    text: "Our annual report carries what didn't work at the same volume as what did. It is the only way the numbers stay useful.",
+    text: "Our annual disclosures detail operational challenges and non-performing outcomes at the same volume as our successes, ensuring data integrity, compliance, and actionable governance metrics for institutional partners.",
   },
   {
     n: "04",
     title: "Local first, always",
-    text: "Teachers, health workers and kitchen staff are hired from within the community they serve. Nine in ten of our field team live within walking distance of their work.",
+    text: "Teachers, healthcare professionals, and field staff are recruited directly from the communities they serve. Nine out of ten field team members live within walking distance of their primary work location.",
   },
 ];
 
@@ -462,23 +475,23 @@ export const PARTNERS = [
 export const FAQS = [
   {
     q: "Is my donation tax-deductible?",
-    a: "Yes. Broadarks Foundation is registered under Section 80G of the Income Tax Act. A receipt and 80G certificate are issued to the email on your donation within 48 hours.",
+    a: "Yes. BroadArks Foundation holds registration under Section 80G of the Income Tax Act. Official tax receipts and 80G certificates are dispatched to your registered email within 48 hours of donation receipt.",
   },
   {
     q: "Can I fund a specific programme?",
-    a: "You can. Choose a designation at checkout, or write to us for anything above ₹2,00,000 and we will share a programme-specific utilisation plan before you commit.",
+    a: "Yes. You may select a designated focus area during transaction processing. For institutional allocations exceeding ₹2,00,000, we prepare and issue a detailed utilization framework prior to financial commitment.",
   },
   {
     q: "Do you accept foreign contributions?",
-    a: "Yes — we hold a valid FCRA registration and maintain a designated FCRA account with SBI New Delhi Main Branch, as required.",
+    a: "Yes. We maintain active registration under the Foreign Contribution (Regulation) Act (FCRA) and process all international transfers through our dedicated account at the State Bank of India, Main Branch, New Delhi.",
   },
   {
     q: "How do I know the money was used well?",
-    a: "Audited financials, FCRA returns and our impact report are published every October, and every programme is re-audited five years after we exit it. Both the successes and the failures are in there.",
+    a: "Audited financial statements, statutory FCRA filings, and our annual impact reports are published every October. Furthermore, every project undergoes an independent post-exit evaluation at five years, fully disclosing both operational achievements and limitations.",
   },
   {
     q: "Can I volunteer or intern?",
-    a: "We take a small number of volunteers each quarter, mostly for skills we don't have in-house — data, design, legal, translation. Write to us with what you'd like to do rather than what you'd like to see.",
+    a: "We onboard a select group of specialized contributors quarterly, primarily focusing on core technical domain gaps, including data analytics, legal review, graphic design, and translation. Applicants are invited to submit specific operational capabilities rather than observational interests.",
   },
 ];
 

@@ -21,9 +21,10 @@ export default function ImpactPage() {
     <>
       <PageHero
         eyebrow="Impact stories"
-        title="Every number here"
-        italic="has a name."
-        lead="We report aggregates because funders need them. But the aggregate was always a person who decided, on a specific Tuesday, to walk back into a classroom or quote her own price. These are five of them."
+        title="Measurable data grounded"
+        italic="in personal transformation."
+        sub="Individual case outcomes driving macro community metrics."
+        lead="We maintain strict aggregate reporting to fulfill partner compliance standards. However, every data point represents a direct human outcome—an individual returning to formal education or independently establishing commercial terms in the market. Below are five representative case studies."
         image={IMG.kidsPlaying}
       />
 
@@ -121,25 +122,26 @@ export default function ImpactPage() {
             <SectionHeading
               index="06"
               eyebrow="The other half"
-              title="What we don't put on this page."
+              title="Honest reporting beyond the highlights."
+              sub="Transparent disclosures and full accountability in our annual review."
             />
           </div>
           <div className="space-y-6 text-[1.05rem] leading-[1.75] text-ink-70 lg:col-span-6 lg:col-start-7">
             <Reveal>
               <p>
-                For every story above there is one that did not end the way we
-                hoped. A centre in Nuh that we closed after eighteen months
-                because attendance never crossed thirty percent. A skilling
-                cohort whose placements evaporated when the local unit shut. A
-                micro-grid we gifted rather than sold, which stopped working in
-                month twenty-nine.
+                For every success story, there is an initiative where we had to
+                rethink our approach. A centre in Nuh that we closed after
+                eighteen months when attendance stayed below thirty percent. A
+                skilling cohort whose jobs disappeared when the local unit shut
+                down. A solar micro-grid we set up incorrectly, which stopped
+                working in month twenty-nine.
               </p>
             </Reveal>
             <Reveal delay={0.08}>
               <p>
-                We publish those at the same length as these, once a year, in
-                the impact report. It is the only version of this page that is
-                worth trusting.
+                We publish these lessons annually in our report with the exact
+                same detail as our wins. True transparency is the only way to
+                build lasting trust.
               </p>
             </Reveal>
             <Reveal delay={0.14}>
@@ -157,7 +159,8 @@ export default function ImpactPage() {
       <CTABand
         image={IMG.handsReaching}
         eyebrow="Add to this page"
-        title="Somebody's Tuesday is on the other side of it."
+        title="Direct support that changes a day."
+        sub="Simple monthly giving that creates lasting change."
         lead="₹1,000 a month keeps one child in a learning centre, meal included, for a year."
       />
     </>

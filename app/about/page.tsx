@@ -20,15 +20,16 @@ export default function AboutPage() {
     <>
       <PageHero
         eyebrow="About us"
-        title="Two rooms, one fan,"
-        italic="forty children."
-        lead="Broadarks Foundation started in 2014 in a rented room in Seelampur, east Delhi. Twelve years on we work across nine states — and the operating principle has not changed: be close, stay long, hand it over."
+        title="Structured field implementation"
+        italic="built on grassroots proximity."
+        sub="Scaling ground operations since 2014."
+        lead="BroadArks Foundation originated in 2014 as a single-room community intervention in Seelampur, East Delhi, serving forty children. Over twelve years of continuous growth, we have expanded into a multi-state implementation agency executing high-impact CSR programmes across nine states. Throughout our expansion, our foundational operating model has remained constant: maintain deep ground proximity, commit to long-term community presence, and build self-sustaining projects designed for local handover."
         image={IMG.classroomFloor}
         meta={[
-          { k: "Founded", v: "2014" },
-          { k: "States", v: "9" },
-          { k: "Field staff", v: "740" },
-          { k: "Hired locally", v: "89%" },
+          { k: "Years of continuous field execution", v: "12+" },
+          { k: "States with active, compliant CSR operations", v: "9" },
+          { k: "Built for long-term community autonomy", v: "Exit-driven" },
+          { k: "Field personnel hired locally", v: "89%" },
         ]}
       />
 
@@ -40,7 +41,8 @@ export default function AboutPage() {
               <SectionHeading
                 index="01"
                 eyebrow="Why we exist"
-                title="Proximity is the whole method."
+                title="Proximity as an operational strategy."
+                sub="Closing the last-mile gap in community development."
               />
             </div>
           </div>
@@ -48,27 +50,30 @@ export default function AboutPage() {
           <div className="space-y-7 text-[1.08rem] leading-[1.75] text-ink-70 lg:col-span-7 lg:col-start-6">
             <Reveal>
               <p className="serif text-[1.6rem] leading-snug text-ink">
-                The distance between a child and a classroom is rarely measured
-                in kilometres. It is measured in whether anyone in that
-                classroom knows her name.
+                Proximity is the operational method. The distance between an
+                individual and essential infrastructure is measured not merely
+                in physical kilometres, but in accessibility and local
+                integration.
               </p>
             </Reveal>
             <Reveal delay={0.08}>
               <p>
-                We began with a simple, unoriginal observation: services exist,
-                and the people who need them most are the least able to reach
-                them. A clinic forty minutes away is not a clinic if reaching it
-                costs half a day&apos;s wages. A school that starts a child two
-                grades below her age is not a second chance.
+                We operate on a direct observation: public services exist, yet
+                target populations often face barriers that prevent effective
+                utilization. A healthcare facility located at a distance imposes
+                prohibitive wage losses, and an educational framework misaligned
+                with a child&apos;s age group fails to deliver sustainable
+                outcomes.
               </p>
             </Reveal>
             <Reveal delay={0.12}>
               <p>
-                So we build inside the settlement rather than near it, hire from
-                within it rather than around it, and measure ourselves five
-                years after we leave rather than on the day we cut the ribbon.
-                It makes us slower than we would like. It has also made the work
-                stay.
+                Consequently, our implementation model positions infrastructure
+                directly within settlements rather than adjacent regions,
+                recruits personnel locally, and evaluates project sustainability
+                five years post-exit rather than at initial launch. This
+                approach prioritizes long-term operational retention over rapid
+                scaling.
               </p>
             </Reveal>
 
@@ -83,19 +88,18 @@ export default function AboutPage() {
 
             <Reveal delay={0.08}>
               <p>
-                We are not a large organisation and have no ambition to become
-                one quickly. Seven hundred and forty people work in the field;
-                eighty-nine percent of them were hired from the communities they
-                serve. The Delhi office is nineteen people, and most of them are
-                on a train more weeks than not.
+                Our organizational structure remains intentionally focused,
+                deploying 740 field personnel—with 89% recruited locally from
+                served communities, alongside a central office team of 19
+                members.
               </p>
             </Reveal>
             <Reveal delay={0.12}>
               <p>
-                What we can promise a donor is narrow and specific: you will
-                know where the money went, you will see what failed, and you
-                will be able to check whether it was still standing five years
-                later.
+                For institutional partners and donors, our governance commitment
+                provides direct traceability of capital allocation, full
+                disclosure of operational challenges alongside successes, and
+                verified five-year post-exit evaluations.
               </p>
             </Reveal>
 
@@ -120,7 +124,8 @@ export default function AboutPage() {
           <SectionHeading
             index="02"
             eyebrow="What we hold to"
-            title="Four commitments we can be held to."
+            title="Core operational commitments."
+            sub="Four governance standards driving ground impact and accountability."
           />
           <div className="mt-16 grid gap-px border-t border-line md:grid-cols-2">
             {VALUES.map((v, i) => (
@@ -147,8 +152,8 @@ export default function AboutPage() {
               <SectionHeading
                 index="03"
                 eyebrow="How we got here"
-                title="Twelve years, unevenly."
-                lead="Not a straight line. Two programmes in this list no longer exist, and one of them we ended ourselves."
+                title="Institutional evolution and operational milestones."
+                sub="A twelve-year timeline of scaled impact, systematic transition, and rigorous evaluation."
               />
               <Parallax amount={30} className="mt-12 hidden lg:block">
                 <RevealImage
@@ -186,8 +191,9 @@ export default function AboutPage() {
           <SectionHeading
             index="04"
             eyebrow="The people"
-            title="Nineteen in Delhi. Seven hundred and forty in the field."
-            lead="The names below are the ones donors usually want. The other 740 are the reason any of it works."
+            title="19 in Delhi. 740 in the field. Zero miles between strategy and execution."
+            sub="A lean administrative core powered by a direct grassroots execution network."
+            lead="Nineteen team members handle administrative oversight, compliance, and institutional coordination in Delhi. Seven hundred and forty field personnel drive daily execution across target communities. The leadership list reflects administrative oversight; the 740 field professionals deliver ground-level implementation and long-term project outcomes."
           />
           <div className="mt-16 grid grid-cols-2 gap-x-6 gap-y-12 md:grid-cols-3 lg:grid-cols-6">
             {TEAM.map((m, i) => (
@@ -226,8 +232,9 @@ export default function AboutPage() {
       <CTABand
         image={IMG.volunteersGroup}
         eyebrow="Work with us"
-        title="We are almost always looking for the wrong kind of help."
-        lead="Data people, translators, lawyers, designers. If you have a skill we don't have in-house, tell us what you'd like to do rather than what you'd like to see."
+        title="Targeted skill partnerships to expand operational efficacy."
+        sub="Collaborating with domain experts to strengthen last-mile CSR infrastructure."
+        lead="We prioritize specialized capabilities that directly strengthen our field infrastructure, data governance, and regulatory compliance frameworks. We actively engage domain experts, including data analysts, legal counsel, technical translators, and strategic designers. If you possess a specialized skill set outside our internal capacity, we invite you to propose a specific operational contribution rather than a general advisory role."
         primary={{ href: "/contact", label: "Get in touch" }}
         secondary={{ href: "/donate", label: "Or donate" }}
       />
