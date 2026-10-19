@@ -4,9 +4,9 @@ import PageHero from "@/components/ui/PageHero";
 import Reveal from "@/components/motion/Reveal";
 import RevealImage from "@/components/motion/RevealImage";
 import SectionHeading from "@/components/ui/SectionHeading";
-import DonateWidget from "@/components/DonateWidget";
+import Button from "@/components/ui/Button";
 import Counter from "@/components/motion/Counter";
-import { FAQS, SITE } from "@/lib/content";
+import { FAQS, GIVING_TIERS, SITE, tel } from "@/lib/content";
 import { IMG } from "@/lib/images";
 
 export const metadata: Metadata = {
@@ -19,6 +19,27 @@ const SPLIT = [
   { v: 910, l: "To the field", d: "Salaries, meals, materials, transport, clinic supplies, hardware." },
   { v: 54, l: "To measurement", d: "Monitoring staff, data systems, the annual audit, finance." },
   { v: 36, l: "To fundraising", d: "Donor communication and the reports you're reading." },
+];
+
+/** Online payments are off for now: donors write or call, and we reply with the details. */
+const DONATE_MAIL = `mailto:${SITE.email}?subject=${encodeURIComponent("Donation enquiry")}`;
+
+const STEPS = [
+  {
+    n: "01",
+    t: "Write or call us",
+    d: `Email ${SITE.email} or call us with the amount you have in mind, whether it is one-time or monthly, and any programme you'd like it to go to.`,
+  },
+  {
+    n: "02",
+    t: "We share the details",
+    d: "A member of our team replies with the payment details and anything else needed to complete your contribution.",
+  },
+  {
+    n: "03",
+    t: "Receipt within 48 hours",
+    d: "Once your contribution reaches us, we send an official receipt and 80G certificate to your email within 48 hours.",
+  },
 ];
 
 const OTHER_WAYS = [
@@ -39,11 +60,68 @@ export default function DonatePage() {
         image={IMG.kidsPointing}
       />
 
+      {/* how to give */}
       <section className="bg-white py-16 md:py-24">
-        <div className="shell">
-          <DonateWidget
-            sceneIds={[IMG.classroomFloor, IMG.clinicianPhone, IMG.workshop, IMG.solar]}
-          />
+        <div className="shell grid gap-14 lg:grid-cols-12">
+          <div className="lg:col-span-5">
+            <SectionHeading
+              index="01"
+              eyebrow="How to give"
+              title="Donate by writing to us."
+              lead="We don't take payments on this website. Get in touch by email or phone and our team will guide you through your contribution personally."
+            >
+              <Reveal delay={0.2}>
+                <div className="mt-10 flex flex-wrap items-center gap-4">
+                  <Button href={DONATE_MAIL}>Email {SITE.email}</Button>
+                </div>
+                <p className="mt-6 text-sm text-ink-70">
+                  Or call{" "}
+                  {SITE.phones.map((p, i) => (
+                    <span key={p}>
+                      {i > 0 && " / "}
+                      <a href={tel(p)} className="link-underline text-ink">
+                        {p}
+                      </a>
+                    </span>
+                  ))}
+                  <span className="text-ink-50"> · Mon–Fri, 10am–6pm IST</span>
+                </p>
+              </Reveal>
+            </SectionHeading>
+          </div>
+
+          <div className="lg:col-span-6 lg:col-start-7">
+            <ol>
+              {STEPS.map((s, i) => (
+                <Reveal key={s.n} delay={i * 0.08}>
+                  <li className="grid grid-cols-[3rem_1fr] gap-4 border-t border-line py-7">
+                    <span className="eyebrow pt-1.5 text-brand">{s.n}</span>
+                    <div>
+                      <h3 className="display text-[1.3rem] leading-tight text-ink">{s.t}</h3>
+                      <p className="mt-2 max-w-[48ch] leading-relaxed text-ink-70">{s.d}</p>
+                    </div>
+                  </li>
+                </Reveal>
+              ))}
+            </ol>
+
+            <Reveal delay={0.3}>
+              <div className="mt-6 border-t border-line pt-8">
+                <p className="eyebrow text-ink-50">What a gift does</p>
+                <ul className="mt-5 grid gap-x-8 gap-y-5 sm:grid-cols-2">
+                  {GIVING_TIERS.map((g) => (
+                    <li key={g.amount}>
+                      <p className="numeral text-[1.6rem] text-brand">
+                        ₹{g.amount.toLocaleString("en-IN")}
+                      </p>
+                      <p className="mt-1 text-[0.95rem] font-medium text-ink">{g.label}</p>
+                      <p className="mt-1 text-sm leading-relaxed text-ink-70">{g.text}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
 
