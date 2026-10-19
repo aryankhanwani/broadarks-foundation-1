@@ -3,7 +3,7 @@ import Logo from "./Logo";
 import Reveal from "./motion/Reveal";
 import SplitWords from "./motion/SplitWords";
 import Button from "./ui/Button";
-import { NAV, SITE, PROGRAMS } from "@/lib/content";
+import { NAV, SITE, PROGRAMS, tel } from "@/lib/content";
 
 export default function Footer() {
   return (
@@ -88,6 +88,18 @@ export default function Footer() {
                     {SITE.email}
                   </a>
                 </p>
+                <p>
+                  <a href={`mailto:${SITE.careersEmail}`} className="link-underline text-white/70">
+                    {SITE.careersEmail}
+                  </a>
+                </p>
+                {SITE.phones.map((p) => (
+                  <p key={p}>
+                    <a href={tel(p)} className="link-underline text-white/70">
+                      {p}
+                    </a>
+                  </p>
+                ))}
               </address>
             </div>
           </div>
@@ -98,7 +110,12 @@ export default function Footer() {
             <Logo tone="light" />
           </Link>
           <p className="max-w-md">{SITE.regd}</p>
-          <p>© {new Date().getFullYear()} {SITE.name}</p>
+          <p className="flex gap-5">
+            <Link href="/privacy" className="link-underline hover:text-white/70">
+              Privacy Policy
+            </Link>
+            <span>© {new Date().getFullYear()} {SITE.name}</span>
+          </p>
         </div>
       </div>
 

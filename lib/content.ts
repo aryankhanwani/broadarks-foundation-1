@@ -6,17 +6,26 @@ export const SITE = {
   tagline: "A wider arc of opportunity.",
   description:
     "Broadarks Foundation works alongside under-served communities across India — building learning, health, livelihood and food systems that outlast us.",
-  email: "hello@broadarks.org",
-  phone: "+91 98100 00000",
-  address: ["Broadarks Foundation", "D-42, Lajpat Nagar II", "New Delhi 110024, India"],
+  email: "info@broadarks.com",
+  careersEmail: "Careers@broadarks.com",
+  phones: ["0755 3553372", "0755 4566266"],
+  address: [
+    "CP-02, 7th Floor, Block C1",
+    "Sagar Premium Tower Phase-1",
+    "JK Hospital Road, Kolar",
+    "Bhopal 462042, Madhya Pradesh",
+  ],
   regd: "Registered under Section 8 · CSR-1 · 80G · FCRA",
   socials: [
-    { label: "Instagram", href: "https://instagram.com" },
-    { label: "LinkedIn", href: "https://linkedin.com" },
-    { label: "YouTube", href: "https://youtube.com" },
-    { label: "X", href: "https://x.com" },
+    { label: "Instagram", href: "https://www.instagram.com/broadarksfoundation/" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/company/broadarks-foundation/posts/" },
+    { label: "Facebook", href: "https://www.facebook.com/broadarksfoundation" },
+    { label: "X", href: "https://x.com/BroadArks_org" },
   ],
 };
+
+/** Landline as a dialable tel: href, e.g. "0755 3553372" → "tel:+917553553372". */
+export const tel = (n: string) => `tel:+91${n.replace(/\s/g, "").replace(/^0/, "")}`;
 
 export const NAV = [
   { label: "Home", href: "/" },

@@ -4,7 +4,7 @@ import Reveal from "@/components/motion/Reveal";
 import RevealImage from "@/components/motion/RevealImage";
 import ContactForm from "@/components/ContactForm";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { SITE, FAQS } from "@/lib/content";
+import { SITE, FAQS, tel } from "@/lib/content";
 import { IMG } from "@/lib/images";
 
 export const metadata: Metadata = {
@@ -13,9 +13,14 @@ export const metadata: Metadata = {
 };
 
 const OFFICES = [
-  { city: "New Delhi", label: "Head office", lines: ["D-42, Lajpat Nagar II", "New Delhi 110024"] },
-  { city: "Ranchi", label: "East field office", lines: ["2nd Floor, Kanke Road", "Ranchi 834008"] },
-  { city: "Malegaon", label: "Health unit", lines: ["Near Civil Hospital Rd", "Malegaon 423203"] },
+  { city: "Bhopal", label: "Head office", lines: SITE.address },
+  { city: "Call us", label: "Phone", lines: SITE.phones, href: tel },
+  {
+    city: "Write to us",
+    label: "Email",
+    lines: [SITE.email, SITE.careersEmail],
+    href: (l: string) => `mailto:${l}`,
+  },
 ];
 
 export default function ContactPage() {
@@ -63,13 +68,25 @@ export default function ContactPage() {
                     </a>
                   </div>
                   <div>
-                    <p className="eyebrow text-ink-50">Phone</p>
+                    <p className="eyebrow text-ink-50">Careers</p>
                     <a
-                      href={`tel:${SITE.phone.replace(/\s/g, "")}`}
+                      href={`mailto:${SITE.careersEmail}`}
                       className="link-underline mt-2 inline-block text-[1.05rem] text-ink"
                     >
-                      {SITE.phone}
+                      {SITE.careersEmail}
                     </a>
+                  </div>
+                  <div>
+                    <p className="eyebrow text-ink-50">Phone</p>
+                    {SITE.phones.map((p) => (
+                      <a
+                        key={p}
+                        href={tel(p)}
+                        className="link-underline mt-2 block w-fit text-[1.05rem] text-ink"
+                      >
+                        {p}
+                      </a>
+                    ))}
                     <p className="mt-1 text-sm text-ink-50">Mon–Fri, 10am–6pm IST</p>
                   </div>
                   <div>
@@ -112,7 +129,15 @@ export default function ContactPage() {
                   <h3 className="display mt-4 text-[1.57rem] leading-none text-ink">{o.city}</h3>
                   <address className="mt-4 space-y-1 text-sm not-italic leading-relaxed text-ink-70">
                     {o.lines.map((l) => (
-                      <p key={l}>{l}</p>
+                      <p key={l}>
+                        {o.href ? (
+                          <a href={o.href(l)} className="link-underline hover:text-ink">
+                            {l}
+                          </a>
+                        ) : (
+                          l
+                        )}
+                      </p>
                     ))}
                   </address>
                 </div>
