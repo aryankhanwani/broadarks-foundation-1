@@ -19,22 +19,22 @@ const APPROACH = [
   {
     n: "01",
     t: "Sit down first",
-    d: "Three to six months of listening before a rupee is spent. Most of what we planned on paper gets thrown out in this phase, which is the point.",
+    d: "Three to six months of deep field assessment precede any capital deployment. Initial proposals are refined based on community feedback to ensure absolute operational alignment.",
   },
   {
     n: "02",
     t: "Build inside, not near",
-    d: "The centre goes into the settlement. Staff are hired from within walking distance. Distance kills attendance faster than cost does.",
+    d: "Facilities are placed directly within target settlements, and staff are recruited locally. Geographic proximity directly secures consistent daily participation.",
   },
   {
     n: "03",
     t: "Give the money a local home",
-    d: "A committee, a tariff, a ledger, a bank account. Ownership of money is the single strongest predictor of whether a thing survives us.",
+    d: "We establish local committees, fee structures, transparent ledgers, and dedicated bank accounts. Financial self-governance is the single strongest predictor of post-exit sustainability.",
   },
   {
     n: "04",
     t: "Leave, then come back and check",
-    d: "Handover at year three, independent audit at year five. Whatever failed goes into the annual report at the same size as whatever worked.",
+    d: "Project ownership transfers at year three, followed by an independent audit at year five. Operational failures are disclosed in our annual reports with the same prominence as successes.",
   },
 ];
 
@@ -43,9 +43,10 @@ export default function WorkPage() {
     <>
       <PageHero
         eyebrow="The work"
-        title="Five pillars,"
-        italic="one arc."
-        lead="They are not separate programmes running in parallel. A meal holds up a lesson; a lesson holds up a livelihood; a lit house lets a child study after dark. We fund the chain, or we don't fund it."
+        title="Five pillars, one interconnected"
+        italic="execution arc."
+        sub="Comprehensive CSR intervention chains designed for complete community transformation."
+        lead="Our initiatives do not operate in silos. Nutritional support sustains educational attendance; education builds viable livelihoods; and reliable household electrification enables evening study. We fund and execute the entire continuum, ensuring zero structural gaps across every deployed intervention."
         image={IMG.kidsBackpacks}
         meta={[
           { k: "Communities", v: "412" },
@@ -87,14 +88,14 @@ export default function WorkPage() {
                   </Reveal>
 
                   <Reveal delay={0.05}>
-                    <h2 className="display max-w-[15ch] text-[1.91rem] leading-[1.02] text-ink sm:text-[2.52rem]">
-                      {p.title}
+                    <h2 className="display max-w-[20ch] text-[1.74rem] leading-[1.05] text-ink sm:text-[2.17rem]">
+                      {p.headline}
                     </h2>
                   </Reveal>
 
                   <Reveal delay={0.12}>
                     <p className="mt-6 max-w-[48ch] text-[1.05rem] leading-relaxed text-ink">
-                      {p.blurb}
+                      {p.sub}
                     </p>
                     <p className="mt-5 max-w-[50ch] leading-relaxed text-ink-70">{p.detail}</p>
                   </Reveal>
@@ -135,8 +136,9 @@ export default function WorkPage() {
             index="06"
             eyebrow="How a programme actually runs"
             tone="light"
-            title="Four steps, and the last one is the hard one."
-            lead="Anyone can open a centre. The discipline is in closing the loop three and five years later, in public."
+            title="Structured lifecycle execution and post-exit accountability."
+            sub="Four-phase governance framework driving last-mile integration and audited handover."
+            lead="Anyone can open a centre. Sustainable impact requires long-term operational discipline and public disclosures three and five years post-exit."
           />
 
           <div className="mt-16 grid gap-px sm:grid-cols-2 lg:grid-cols-4">
@@ -175,8 +177,9 @@ export default function WorkPage() {
       <CTABand
         image={IMG.workshop}
         eyebrow="Fund a pillar"
-        title="Pick the part of the chain you care about."
-        lead="Designated giving is available for every programme. Above ₹2,00,000 we'll send a utilisation plan before you commit anything."
+        title="Targeted capital deployment across the implementation chain."
+        sub="Designated institutional grants and high-accountability CSR funding."
+        lead="Designated giving options are available across all five operational pillars. For institutional contributions exceeding ₹2,00,000, we provide a detailed capital utilization plan prior to financial commitment."
         secondary={{ href: "/contact", label: "Ask us first" }}
       />
     </>

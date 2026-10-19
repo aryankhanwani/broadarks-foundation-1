@@ -14,6 +14,7 @@ export default function PageHero({
   eyebrow,
   title,
   italic,
+  sub,
   lead,
   image,
   meta,
@@ -21,6 +22,8 @@ export default function PageHero({
   eyebrow: string;
   title: string;
   italic?: string;
+  /** Sub-headline, set between the title and the lead. */
+  sub?: string;
   lead?: string;
   image: string;
   meta?: { k: string; v: string }[];
@@ -61,12 +64,23 @@ export default function PageHero({
             </motion.span>
           </h1>
 
+          {sub && (
+            <motion.p
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.45, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+              className="mt-8 max-w-[48ch] text-[1.2rem] font-medium leading-snug text-ink"
+            >
+              {sub}
+            </motion.p>
+          )}
+
           {lead && (
             <motion.p
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.55, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-8 max-w-[56ch] text-[1.05rem] leading-relaxed text-ink-70"
+              className={`${sub ? "mt-5" : "mt-8"} max-w-[56ch] text-[1.05rem] leading-relaxed text-ink-70`}
             >
               {lead}
             </motion.p>

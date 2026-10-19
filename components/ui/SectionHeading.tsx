@@ -6,6 +6,7 @@ export default function SectionHeading({
   eyebrow,
   index,
   title,
+  sub,
   lead,
   align = "left",
   tone = "ink",
@@ -14,6 +15,8 @@ export default function SectionHeading({
   eyebrow?: string;
   index?: string;
   title: string;
+  /** Sub-headline, set between the title and the lead. */
+  sub?: string;
   lead?: string;
   align?: "left" | "center";
   tone?: "ink" | "light";
@@ -42,10 +45,21 @@ export default function SectionHeading({
           isLight ? "text-white" : "text-ink"
         } ${align === "center" ? "" : "max-w-[18ch]"}`}
       />
+      {sub && (
+        <Reveal delay={0.12} y={18}>
+          <p
+            className={`mt-6 max-w-[46ch] text-[1.15rem] font-medium leading-snug ${
+              isLight ? "text-white" : "text-ink"
+            } ${align === "center" ? "mx-auto" : ""}`}
+          >
+            {sub}
+          </p>
+        </Reveal>
+      )}
       {lead && (
         <Reveal delay={0.15} y={18}>
           <p
-            className={`mt-7 max-w-[52ch] text-[1.0625rem] leading-relaxed ${
+            className={`${sub ? "mt-4" : "mt-7"} max-w-[52ch] text-[1.0625rem] leading-relaxed ${
               isLight ? "text-white/70" : "text-ink-70"
             } ${align === "center" ? "mx-auto" : ""}`}
           >

@@ -28,9 +28,10 @@ export default function ContactPage() {
     <>
       <PageHero
         eyebrow="Contact us"
-        title="A person replies."
-        italic="Always."
-        lead="No ticket numbers, no autoresponders. Write to us about partnership, volunteering, press, or a question about where the money went — the last one is our favourite."
+        title="A representative responds."
+        italic="Without automated delay."
+        sub="Direct channels for partnership and stakeholder communication: responsive professional engagement and transparent financial inquiry support."
+        lead="We do not utilize ticket queues or automated response systems. We welcome inquiries regarding strategic partnerships, volunteer opportunities, media engagements, or financial allocation transparency, with financial governance inquiries prioritized."
         image={IMG.meetingRoom}
       />
 
@@ -154,8 +155,9 @@ export default function ContactPage() {
             <div className="lg:sticky lg:top-32">
               <SectionHeading
                 index="03"
-                eyebrow="Before you write"
-                title="Asked often enough to answer here."
+                eyebrow="Asked often enough to answer here"
+                title="Frequently asked questions and governance standards."
+                sub="Institutional compliance, regulatory certifications, and operational audits."
               />
             </div>
           </div>
