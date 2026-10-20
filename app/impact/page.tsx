@@ -24,7 +24,7 @@ export default function ImpactPage() {
         title="Measurable data grounded"
         italic="in personal transformation."
         sub="Individual case outcomes driving macro community metrics."
-        lead="We maintain strict aggregate reporting to fulfill partner compliance standards. However, every data point represents a direct human outcome—an individual returning to formal education or independently establishing commercial terms in the market. Below are five representative case studies."
+        lead="We maintain strict aggregate reporting to fulfill partner compliance standards. However, every data point represents a direct human outcome: an individual returning to formal education or independently establishing commercial terms in the market. Below are five representative case studies."
         image={IMG.kidsPlaying}
       />
 
@@ -140,8 +140,7 @@ export default function ImpactPage() {
             <Reveal delay={0.08}>
               <p>
                 We publish these lessons annually in our report with the exact
-                same detail as our wins. True transparency is the only way to
-                build lasting trust.
+                same detail as our wins.
               </p>
             </Reveal>
             <Reveal delay={0.14}>

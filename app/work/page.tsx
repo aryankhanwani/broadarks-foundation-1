@@ -46,7 +46,7 @@ export default function WorkPage() {
         title="Five pillars, one interconnected"
         italic="execution arc."
         sub="Comprehensive CSR intervention chains designed for complete community transformation."
-        lead="Our initiatives do not operate in silos. Nutritional support sustains educational attendance; education builds viable livelihoods; and reliable household electrification enables evening study. We fund and execute the entire continuum, ensuring zero structural gaps across every deployed intervention."
+        lead="Our initiatives do not operate in silos. Nutritional support sustains educational attendance; education builds viable livelihoods; and reliable household electrification enables evening study. We fund and execute the entire continuum, ensuring zero structural gaps."
         image={IMG.kidsBackpacks}
         meta={[
           { k: "Communities", v: "412" },

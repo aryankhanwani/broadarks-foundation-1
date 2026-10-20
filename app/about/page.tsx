@@ -23,7 +23,7 @@ export default function AboutPage() {
         title="Structured field implementation"
         italic="built on grassroots proximity."
         sub="Scaling ground operations since 2014."
-        lead="BroadArks Foundation originated in 2014 as a single-room community intervention in Seelampur, East Delhi, serving forty children. Over twelve years of continuous growth, we have expanded into a multi-state implementation agency executing high-impact CSR programmes across nine states. Throughout our expansion, our foundational operating model has remained constant: maintain deep ground proximity, commit to long-term community presence, and build self-sustaining projects designed for local handover."
+        lead="BroadArks Foundation originated in 2014 in Seelampur, East Delhi, serving forty children. Over twelve years of continuous growth, we have expanded into a multi-state implementation agency executing high-impact CSR programmes across nine states. Throughout our expansion, our foundational operating model has remained constant: maintain deep ground proximity, commit to long-term community presence, and build self-sustaining projects designed for local handover."
         image={IMG.classroomFloor}
         meta={[
           { k: "Years of continuous field execution", v: "12+" },
@@ -58,9 +58,7 @@ export default function AboutPage() {
             </Reveal>
             <Reveal delay={0.08}>
               <p>
-                We operate on a direct observation: public services exist, yet
-                target populations often face barriers that prevent effective
-                utilization. A healthcare facility located at a distance imposes
+                A healthcare facility located at a distance imposes
                 prohibitive wage losses, and an educational framework misaligned
                 with a child&apos;s age group fails to deliver sustainable
                 outcomes.
@@ -71,9 +69,7 @@ export default function AboutPage() {
                 Consequently, our implementation model positions infrastructure
                 directly within settlements rather than adjacent regions,
                 recruits personnel locally, and evaluates project sustainability
-                five years post-exit rather than at initial launch. This
-                approach prioritizes long-term operational retention over rapid
-                scaling.
+                five years post-exit rather than at initial launch.
               </p>
             </Reveal>
 
@@ -89,15 +85,14 @@ export default function AboutPage() {
             <Reveal delay={0.08}>
               <p>
                 Our organizational structure remains intentionally focused,
-                deploying 740 field personnel—with 89% recruited locally from
+                deploying 740 field personnel, with 89% recruited locally from
                 served communities, alongside a central office team of 19
                 members.
               </p>
             </Reveal>
             <Reveal delay={0.12}>
               <p>
-                For institutional partners and donors, our governance commitment
-                provides direct traceability of capital allocation, full
+                Our governance commitment provides direct traceability of capital allocation, full
                 disclosure of operational challenges alongside successes, and
                 verified five-year post-exit evaluations.
               </p>
@@ -193,7 +188,7 @@ export default function AboutPage() {
             eyebrow="The people"
             title="19 in Delhi. 740 in the field. Zero miles between strategy and execution."
             sub="A lean administrative core powered by a direct grassroots execution network."
-            lead="Nineteen team members handle administrative oversight, compliance, and institutional coordination in Delhi. Seven hundred and forty field personnel drive daily execution across target communities. The leadership list reflects administrative oversight; the 740 field professionals deliver ground-level implementation and long-term project outcomes."
+            lead="The leadership list reflects administrative oversight; the 740 field professionals deliver ground-level implementation and long-term project outcomes."
           />
           <div className="mt-16 grid grid-cols-2 gap-x-6 gap-y-12 md:grid-cols-3 lg:grid-cols-6">
             {TEAM.map((m, i) => (
@@ -234,7 +229,7 @@ export default function AboutPage() {
         eyebrow="Work with us"
         title="Targeted skill partnerships to expand operational efficacy."
         sub="Collaborating with domain experts to strengthen last-mile CSR infrastructure."
-        lead="We prioritize specialized capabilities that directly strengthen our field infrastructure, data governance, and regulatory compliance frameworks. We actively engage domain experts, including data analysts, legal counsel, technical translators, and strategic designers. If you possess a specialized skill set outside our internal capacity, we invite you to propose a specific operational contribution rather than a general advisory role."
+        lead="We actively engage domain experts, including data analysts, legal counsel, technical translators, and strategic designers. If you possess a specialized skill set outside our internal capacity, we invite you to propose a specific operational contribution rather than a general advisory role."
         primary={{ href: "/contact", label: "Get in touch" }}
         secondary={{ href: "/donate", label: "Or donate" }}
       />

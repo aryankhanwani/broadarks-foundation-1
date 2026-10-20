@@ -31,7 +31,7 @@ export default function ContactPage() {
         title="A representative responds."
         italic="Without automated delay."
         sub="Direct channels for partnership and stakeholder communication: responsive professional engagement and transparent financial inquiry support."
-        lead="We do not utilize ticket queues or automated response systems. We welcome inquiries regarding strategic partnerships, volunteer opportunities, media engagements, or financial allocation transparency, with financial governance inquiries prioritized."
+        lead="We welcome inquiries regarding strategic partnerships, volunteer opportunities, media engagements, or financial allocation transparency, with financial governance inquiries prioritized."
         image={IMG.meetingRoom}
       />
 
