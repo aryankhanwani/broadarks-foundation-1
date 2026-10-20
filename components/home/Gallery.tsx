@@ -12,24 +12,24 @@ const C = HOME_COPY.gallery;
 
 const COLS: { id: string; alt: string; ratio: string }[][] = [
   [
-    { id: IMG.volunteersGroup, alt: "Volunteers at a community drive", ratio: "aspect-[3/4]" },
-    { id: IMG.foodRelief, alt: "Packing relief rations", ratio: "aspect-square" },
-    { id: IMG.library, alt: "A lending library inside a learning centre", ratio: "aspect-[4/5]" },
+    { id: IMG.chartHills, alt: "A student holds up an eye chart during a school vision screening", ratio: "aspect-[3/4]" },
+    { id: IMG.outdoorTest, alt: "A screener checks a boy's eyesight in a schoolyard", ratio: "aspect-square" },
+    { id: IMG.bpCheckBanner, alt: "A blood pressure check at a Clean Cooking Initiative camp in Karnataka", ratio: "aspect-[4/5]" },
   ],
   [
-    { id: IMG.classroomTeacher, alt: "A class in session", ratio: "aspect-[4/5]" },
-    { id: IMG.kidsBackpacks, alt: "Children walking to the centre", ratio: "aspect-[3/4]" },
-    { id: IMG.handsHeart, alt: "Hands together at a community event", ratio: "aspect-square" },
+    { id: IMG.chartsClassroom, alt: "Children with their eye charts after a screening", ratio: "aspect-[4/5]" },
+    { id: IMG.chartWomen, alt: "Two women run a reading test with an eye chart", ratio: "aspect-[3/4]" },
+    { id: IMG.spectaclesFitting, alt: "A student is fitted with new spectacles", ratio: "aspect-square" },
   ],
   [
-    { id: IMG.kidsLaughing, alt: "Children laughing", ratio: "aspect-square" },
-    { id: IMG.townhall, alt: "A village committee meeting", ratio: "aspect-[4/5]" },
-    { id: IMG.graduation, alt: "A graduating cohort", ratio: "aspect-[3/4]" },
+    { id: IMG.stoveFilm, alt: "Women watch a film on clean cooking stoves", ratio: "aspect-square" },
+    { id: IMG.chartsGroup, alt: "Students line up with eye-test charts", ratio: "aspect-[4/5]" },
+    { id: IMG.rooftopTest, alt: "A teacher screens a student's vision on a hillside school rooftop", ratio: "aspect-[3/4]" },
   ],
   [
-    { id: IMG.clinicianPhone, alt: "A community health worker on her round", ratio: "aspect-[4/5]" },
-    { id: IMG.kidsPlaying, alt: "Children playing near the centre", ratio: "aspect-[3/4]" },
-    { id: IMG.workshop, alt: "A skilling workshop", ratio: "aspect-square" },
+    { id: IMG.examGirl, alt: "A screener examines a girl's eyes in a classroom", ratio: "aspect-[4/5]" },
+    { id: IMG.redUniforms, alt: "Students in red uniforms wait for their eye check-up", ratio: "aspect-[3/4]" },
+    { id: IMG.queueTrees, alt: "Women queue under the trees at a health camp", ratio: "aspect-square" },
   ],
 ];
 

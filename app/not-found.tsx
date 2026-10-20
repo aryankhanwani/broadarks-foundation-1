@@ -38,7 +38,7 @@ export default function NotFound() {
 
       <div className="lg:col-span-5 lg:col-start-8">
         <RevealImage
-          id={IMG.kidsBoots}
+          id={IMG.chartGirl}
           alt=""
           className="aspect-[4/5] w-full"
           sizes="(max-width: 1024px) 100vw, 40vw"

@@ -24,7 +24,7 @@ export default function HomePage() {
       <Partners />
       <JournalPreview />
       <CTABand
-        image={IMG.groupHug}
+        image={IMG.schoolAssembly}
         eyebrow={HOME_COPY.cta.eyebrow}
         title={HOME_COPY.cta.title}
         sub={HOME_COPY.cta.sub}

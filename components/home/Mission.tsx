@@ -45,8 +45,8 @@ export default function Mission() {
 
         <div className="lg:col-span-6 lg:col-start-7">
           <RevealImage
-            id={IMG.kidsPointing}
-            alt="Children in a community we work with"
+            id={IMG.chartsCorridor}
+            alt="Schoolgirls holding eye-test charts during a vision screening"
             className="aspect-[5/6] w-full"
             sizes="(max-width: 1024px) 100vw, 45vw"
           />

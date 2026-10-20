@@ -70,8 +70,8 @@ export const PROGRAMS: Program[] = [
     sub: "Settlement-based learning centres enabling school re-entry and continuous growth.",
     detail:
       "Children previously out of school for two to three years complete specialized bridge classes to re-enter government schools at their age-appropriate grade. Each centre integrates a community lending library and is staffed by local educators residing within walking distance.",
-    image: IMG.classroomFloor,
-    secondary: IMG.library,
+    image: IMG.studentsClassroom,
+    secondary: IMG.trainerTalk,
     metrics: [
       { k: "Centres", v: "63" },
       { k: "Children enrolled", v: "9,400" },
@@ -89,8 +89,8 @@ export const PROGRAMS: Program[] = [
     sub: "Mobile medical units and community health networks delivering last-mile care.",
     detail:
       "Four mobile units serve wards located over an hour from the nearest medical facility. The operations focus on structured preventive care: antenatal consultations, anaemia screenings, vaccination tracking, and a reliable secondary referral pipeline.",
-    image: IMG.clinicianPhone,
-    secondary: IMG.careHands,
+    image: IMG.trialFrame,
+    secondary: IMG.bpUnderTrees,
     metrics: [
       { k: "Health workers", v: "180" },
       { k: "Consults / year", v: "54,000" },
@@ -108,8 +108,8 @@ export const PROGRAMS: Program[] = [
     sub: "Sustainable income frameworks building self-reliant community cooperatives.",
     detail:
       "Cohorts complete specialized training before transitioning directly into formal employment or registered producer collectives equipped with banking access and established market linkages. Women's producer groups across Jharkhand and Bihar now independently manage commercial negotiations and trade pricing.",
-    image: IMG.workshop,
-    secondary: IMG.collaborate,
+    image: IMG.leafletsHall,
+    secondary: IMG.stoveTalk,
     metrics: [
       { k: "Trained", v: "6,200" },
       { k: "Placed or self-employed", v: "71%" },
@@ -127,8 +127,8 @@ export const PROGRAMS: Program[] = [
     sub: "Community-run kitchens and vital nutritional interventions for foundational development.",
     detail:
       "Nutrition sits upstream of every intervention we deploy. Community kitchens managed by local women provide hot meals directly at our learning centres, while active growth monitoring identifies and reverses nutritional wasting in its earliest stages.",
-    image: IMG.foodRelief,
-    secondary: IMG.reliefTruck,
+    image: IMG.doctorCamp,
+    secondary: IMG.campQueue,
     metrics: [
       { k: "Meals served", v: "2.1M" },
       { k: "Kitchens", v: "27" },
@@ -146,8 +146,8 @@ export const PROGRAMS: Program[] = [
     sub: "Community-managed clean energy and water systems engineered for long-term autonomy.",
     detail:
       "We deploy solar micro-grids, rooftop installations for schools and clinics, and rainwater harvesting structures, each fully transferred to trained village committees responsible for ongoing maintenance.",
-    image: IMG.solar,
-    secondary: IMG.sunsetFriends,
+    image: IMG.cleanStoveSlide,
+    secondary: IMG.stoveScreening,
     metrics: [
       { k: "Micro-grids", v: "34" },
       { k: "Households lit", v: "11,700" },
@@ -165,7 +165,6 @@ export type Story = {
   headline: string;
   pull: string;
   body: string[];
-  portrait: string;
   scene: string;
 };
 
@@ -183,8 +182,7 @@ export const STORIES: Story[] = [
       "The bridge class at our Seelampur centre starts where the learner is, not where the syllabus says she should be. Razia joined a group of eleven girls, all of them re-learning fractions in the evenings after their work at home was done.",
       "She re-entered a government school in class nine — the correct grade for her age — and now tutors the younger bridge cohort twice a week. She wants to sit for the nursing entrance in two years.",
     ],
-    portrait: IMG.p6,
-    scene: IMG.library,
+    scene: IMG.coverEye,
   },
   {
     slug: "sunita",
@@ -199,8 +197,7 @@ export const STORIES: Story[] = [
       "Over eighteen months the group registered as a producer collective, opened a current account, and learned to cost their own product. The first order they quoted for themselves was for 400 pieces.",
       "Forty-eight collectives now operate on the same model across Jharkhand and Bihar. Sunita trains the new ones.",
     ],
-    portrait: IMG.p7,
-    scene: IMG.workshop,
+    scene: IMG.womenLeaflets,
   },
   {
     slug: "imran",
@@ -215,8 +212,7 @@ export const STORIES: Story[] = [
       "Most of his work is follow-through: making sure a pregnant woman completes four antenatal visits, that an anaemia course is finished, that an immunisation date doesn't quietly pass.",
       "Antenatal coverage in his ward went from 51% to 94% in three years. He is careful to point out that this is not one person's doing.",
     ],
-    portrait: IMG.p1,
-    scene: IMG.volunteerBack,
+    scene: IMG.bpCheckMan,
   },
   {
     slug: "meera",
@@ -231,8 +227,7 @@ export const STORIES: Story[] = [
       "The change teachers noticed first wasn't nutritional — it was attention. Afternoon attendance rose 38% in the first term, and stayed there.",
       "Meera's growth chart crossed back over the median line last spring. Her mother now cooks at the kitchen two days a week.",
     ],
-    portrait: IMG.p8,
-    scene: IMG.kidsBackpacks,
+    scene: IMG.kidsOnGrass,
   },
   {
     slug: "arun",
@@ -247,8 +242,7 @@ export const STORIES: Story[] = [
       "That fund has paid for two inverter replacements without a single call to us.",
       "Eleven thousand seven hundred households are now lit by grids on this model. The five-year test is one we are still running — and so far, passing.",
     ],
-    portrait: IMG.p5,
-    scene: IMG.solar,
+    scene: IMG.stovePresenter,
   },
 ];
 
@@ -259,7 +253,7 @@ export type Post = {
   date: string;
   readTime: string;
   category: string;
-  author: { name: string; role: string; avatar: string };
+  author: { name: string; role: string };
   cover: string;
   inline: string;
   body: { type: "p" | "h2" | "quote" | "list"; text?: string; items?: string[] }[];
@@ -273,9 +267,9 @@ export const POSTS: Post[] = [
     date: "2026-08-14",
     readTime: "7 min read",
     category: "Field notes",
-    author: { name: "Nandini Roy", role: "Head of Programmes", avatar: IMG.p9 },
-    cover: IMG.classroomTeacher,
-    inline: IMG.kidsBoots,
+    author: { name: "Nandini Roy", role: "Head of Programmes" },
+    cover: IMG.classDesks,
+    inline: IMG.trainingBanner,
     body: [
       {
         type: "p",
@@ -331,9 +325,9 @@ export const POSTS: Post[] = [
     date: "2026-06-02",
     readTime: "6 min read",
     category: "How we work",
-    author: { name: "Kabir Menon", role: "Director, Strategy", avatar: IMG.p3 },
-    cover: IMG.solar,
-    inline: IMG.townhall,
+    author: { name: "Kabir Menon", role: "Director, Strategy" },
+    cover: IMG.schoolBuildingGroup,
+    inline: IMG.campBanner,
     body: [
       {
         type: "p",
@@ -375,9 +369,9 @@ export const POSTS: Post[] = [
     date: "2026-04-21",
     readTime: "5 min read",
     category: "Transparency",
-    author: { name: "Aisha Qureshi", role: "Head of Finance", avatar: IMG.p2 },
-    cover: IMG.coinsChange,
-    inline: IMG.handsReaching,
+    author: { name: "Aisha Qureshi", role: "Head of Finance" },
+    cover: IMG.spectaclesBanner,
+    inline: IMG.spectacleBoxes,
     body: [
       {
         type: "p",
@@ -453,12 +447,12 @@ export const VALUES = [
 ];
 
 export const TEAM = [
-  { name: "Nandini Roy", role: "Head of Programmes", img: IMG.p9, place: "Delhi" },
-  { name: "Kabir Menon", role: "Director, Strategy", img: IMG.p3, place: "Bengaluru" },
-  { name: "Aisha Qureshi", role: "Head of Finance", img: IMG.p2, place: "Delhi" },
-  { name: "Thomas Iyer", role: "Field Director, East", img: IMG.p10, place: "Ranchi" },
-  { name: "Leela Nair", role: "Health Lead", img: IMG.p7, place: "Malegaon" },
-  { name: "Daniel Fernandes", role: "Partnerships", img: IMG.p1, place: "Mumbai" },
+  { name: "Nandini Roy", role: "Head of Programmes", place: "Delhi" },
+  { name: "Kabir Menon", role: "Director, Strategy", place: "Bengaluru" },
+  { name: "Aisha Qureshi", role: "Head of Finance", place: "Delhi" },
+  { name: "Thomas Iyer", role: "Field Director, East", place: "Ranchi" },
+  { name: "Leela Nair", role: "Health Lead", place: "Malegaon" },
+  { name: "Daniel Fernandes", role: "Partnerships", place: "Mumbai" },
 ];
 
 export const PARTNERS = [

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import Initials from "@/components/ui/Initials";
 import PageHero from "@/components/ui/PageHero";
 import Reveal from "@/components/motion/Reveal";
 import PostCard, { fmtDate } from "@/components/PostCard";
@@ -24,7 +25,7 @@ export default function BlogPage() {
         title="Working notes,"
         italic="published early."
         lead="We write these mostly for ourselves — to force the thinking into sentences before it hardens into policy. Three pieces so far this year."
-        image={IMG.books}
+        image={IMG.trainerScreen}
       />
 
       {/* lead post */}
@@ -58,15 +59,7 @@ export default function BlogPage() {
                   {lead.dek}
                 </p>
                 <div className="mt-8 flex items-center gap-3 border-t border-line pt-6">
-                  <span className="relative h-10 w-10 overflow-hidden rounded-full">
-                    <Image
-                      src={img(lead.author.avatar, 160)}
-                      alt=""
-                      fill
-                      sizes="40px"
-                      className="object-cover"
-                    />
-                  </span>
+                  <Initials name={lead.author.name} className="h-10 w-10 text-[0.8rem]" />
                   <span className="text-sm">
                     <b className="block font-medium text-ink">{lead.author.name}</b>
                     <span className="text-ink-50">{lead.author.role}</span>
@@ -88,7 +81,7 @@ export default function BlogPage() {
 
           <div className="grid gap-12 md:grid-cols-2 md:gap-10">
             {rest.map((p, i) => (
-              <Reveal key={p.slug} delay={i * 0.1}>
+              <Reveal key={p.slug} delay={i * 0.1} className="md:row-span-4 md:grid md:grid-rows-subgrid md:gap-y-0">
                 <PostCard post={p} />
               </Reveal>
             ))}
@@ -97,7 +90,7 @@ export default function BlogPage() {
       </section>
 
       <CTABand
-        image={IMG.speaker}
+        image={IMG.seatedBanner}
         eyebrow="Stay close"
         title="One letter a quarter. Nothing else, ever."
         lead="Programme updates, the numbers behind them, and what we got wrong. Unsubscribe in one click."

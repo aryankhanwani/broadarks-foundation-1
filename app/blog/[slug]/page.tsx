@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import Initials from "@/components/ui/Initials";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Reveal from "@/components/motion/Reveal";
@@ -8,7 +8,7 @@ import PostCard, { fmtDate } from "@/components/PostCard";
 import CTABand from "@/components/CTABand";
 import ReadingProgress from "@/components/ReadingProgress";
 import { POSTS } from "@/lib/content";
-import { IMG, img } from "@/lib/images";
+import { IMG } from "@/lib/images";
 
 export function generateStaticParams() {
   return POSTS.map((p) => ({ slug: p.slug }));
@@ -62,15 +62,7 @@ export default async function PostPage({ params }: PageProps<"/blog/[slug]">) {
 
           <Reveal delay={0.18}>
             <div className="mt-10 flex items-center gap-3">
-              <span className="relative h-12 w-12 overflow-hidden rounded-full">
-                <Image
-                  src={img(post.author.avatar, 200)}
-                  alt=""
-                  fill
-                  sizes="48px"
-                  className="object-cover"
-                />
-              </span>
+              <Initials name={post.author.name} className="h-12 w-12 text-sm" />
               <span className="text-sm">
                 <b className="block font-medium text-ink">{post.author.name}</b>
                 <span className="text-ink-50">{post.author.role}</span>
@@ -164,15 +156,7 @@ export default async function PostPage({ params }: PageProps<"/blog/[slug]">) {
             <Reveal y={18}>
               <div className="flex flex-col gap-5 border-t border-line pt-8 sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex items-center gap-3">
-                  <span className="relative h-12 w-12 overflow-hidden rounded-full">
-                    <Image
-                      src={img(post.author.avatar, 200)}
-                      alt=""
-                      fill
-                      sizes="48px"
-                      className="object-cover"
-                    />
-                  </span>
+                  <Initials name={post.author.name} className="h-12 w-12 text-sm" />
                   <span className="text-sm">
                     <b className="block font-medium text-ink">{post.author.name}</b>
                     <span className="text-ink-50">{post.author.role}</span>
@@ -192,7 +176,7 @@ export default async function PostPage({ params }: PageProps<"/blog/[slug]">) {
           <p className="eyebrow mb-10 text-ink-50">Keep reading</p>
           <div className="grid gap-12 md:grid-cols-2 md:gap-10">
             {more.map((p, i) => (
-              <Reveal key={p.slug} delay={i * 0.1}>
+              <Reveal key={p.slug} delay={i * 0.1} className="md:row-span-4 md:grid md:grid-rows-subgrid md:gap-y-0">
                 <PostCard post={p} />
               </Reveal>
             ))}
@@ -201,7 +185,7 @@ export default async function PostPage({ params }: PageProps<"/blog/[slug]">) {
       </section>
 
       <CTABand
-        image={IMG.kidsLaughing}
+        image={IMG.trainees}
         eyebrow="Take part"
         title="Reading is good. Funding it is better."
         lead="₹1,000 is a month of learning-centre place for one child, hot meal included."
