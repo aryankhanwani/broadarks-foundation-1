@@ -2,6 +2,11 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
+import { SITE } from "@/lib/content";
+import { submitForm } from "@/lib/submissions";
+
+/** Digits plus the separators people type in phone numbers: + - ( ) and spaces. */
+const PHONE_CHARS = /[^\d+\-()\s]/g;
 
 const REASONS = ["Partner with us", "Volunteer", "Media", "Donation help", "Something else"];
 
@@ -19,6 +24,8 @@ function Field({
   required?: boolean;
 }) {
   const [focused, setFocused] = useState(false);
+  const [hint, setHint] = useState("");
+  const tel = type === "tel";
   const cls =
     "peer w-full border-0 border-b border-line bg-transparent pb-3 pt-7 text-ink outline-none transition-colors placeholder:text-transparent focus:border-transparent";
 
@@ -53,7 +60,24 @@ function Field({
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
           className={cls}
+          {...(tel && {
+            inputMode: "tel" as const,
+            autoComplete: "tel",
+            maxLength: 20,
+            pattern: "\\+?[\\d\\s\\-\\(\\)]{7,20}",
+            title: "Please enter a valid phone number using digits only.",
+            onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
+              const clean = e.target.value.replace(PHONE_CHARS, "");
+              setHint(clean === e.target.value ? "" : "Numbers only, please.");
+              e.target.value = clean;
+            },
+          })}
         />
+      )}
+      {hint && (
+        <p role="status" className="absolute -bottom-6 left-0 text-xs text-brand">
+          {hint}
+        </p>
       )}
       <span
         className={`absolute inset-x-0 bottom-0 h-[1.5px] origin-left bg-brand transition-transform duration-500 ease-[cubic-bezier(.16,1,.3,1)] ${
@@ -67,6 +91,33 @@ function Field({
 export default function ContactForm() {
   const [reason, setReason] = useState(REASONS[0]);
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState("");
+
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const value = (key: string) => String(data.get(key) ?? "").trim();
+    setSendError("");
+    setSending(true);
+    try {
+      await submitForm({
+        name: value("name"),
+        email: value("email"),
+        organisation: value("org") || null,
+        phone: value("phone") || null,
+        topics: [reason],
+        message: value("message"),
+      });
+      form.reset();
+      setSent(true);
+    } catch {
+      setSendError(`Sorry, that didn't go through. Please try again, or email us at ${SITE.email}.`);
+    } finally {
+      setSending(false);
+    }
+  }
 
   return (
     <div className="relative">
@@ -104,10 +155,7 @@ export default function ContactForm() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0, y: -10 }}
-            onSubmit={(e) => {
-              e.preventDefault();
-              setSent(true);
-            }}
+            onSubmit={onSubmit}
             className="space-y-9"
           >
             <div>
@@ -136,25 +184,27 @@ export default function ContactForm() {
             </div>
             <div className="grid gap-8 sm:grid-cols-2">
               <Field label="Organisation (optional)" name="org" required={false} />
-              <Field label="Phone (optional)" name="phone" required={false} />
+              <Field label="Phone (optional)" name="phone" type="tel" required={false} />
             </div>
             <Field label="Your message" name="message" textarea />
 
             <button
               type="submit"
-              className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-ink px-8 py-4 text-sm font-medium text-white transition-colors duration-500 hover:text-ink"
+              disabled={sending}
+              className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-ink px-8 py-4 text-sm font-medium text-white transition-colors duration-500 hover:text-ink disabled:opacity-60"
             >
               <span className="absolute inset-0 origin-bottom scale-y-0 rounded-full bg-brand transition-transform duration-500 ease-[cubic-bezier(.16,1,.3,1)] group-hover:scale-y-100" />
-              <span className="relative z-10">Send message</span>
+              <span className="relative z-10">{sending ? "Sending…" : "Send message"}</span>
               <span className="relative z-10 transition-transform duration-500 group-hover:translate-x-1">
                 →
               </span>
             </button>
 
-            <p className="text-xs text-ink-50">
-              This demo form doesn&apos;t submit anywhere yet — wire it to your
-              inbox or CRM when you&apos;re ready.
-            </p>
+            {sendError && (
+              <p role="alert" className="text-sm text-red-600">
+                {sendError}
+              </p>
+            )}
           </motion.form>
         )}
       </AnimatePresence>
