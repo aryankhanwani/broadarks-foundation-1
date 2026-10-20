@@ -73,7 +73,7 @@ const DIRECTION_1: HomeCopy = {
     title: "Local ownership, ground-level execution.",
     sub: "Sustainable impact begins with community-embedded teams.",
     body:
-      "We do not manage projects from a distant head office. Instead, BroadArks Foundation builds capacity directly inside the communities we serve. Nine out of ten of our teachers, healthcare professionals, and support staff are hired locally and live within walking distance of their work. This local-first approach ensures deep trust, operational efficiency, and sustainable project handovers that align with Schedule VII CSR goals.",
+      "BroadArks Foundation builds capacity directly inside the communities we serve. Nine out of ten of our teachers, healthcare professionals, and support staff are hired locally and live within walking distance of their work. This local-first approach ensures deep trust, operational efficiency, and sustainable project handovers that align with Schedule VII CSR goals.",
     link: { href: "/about", label: "Discover our model" },
   },
 
@@ -83,22 +83,22 @@ const DIRECTION_1: HomeCopy = {
       {
         n: "01",
         title: "Depth over distance",
-        text: "We prioritize deep, sustainable impact over superficial reach. Rather than maintaining a nominal presence across widespread locations, we deploy focused resources directly on the ground to deliver measurable social outcomes.",
+        text: "Rather than maintaining a nominal presence across widespread locations, we deploy focused resources directly on the ground to deliver measurable social outcomes.",
       },
       {
         n: "02",
         title: "Exit-driven program design",
-        text: "Every CSR programme is designed backwards from day one with a clear transition roadmap. We build local leadership and community capacity so that every initiative becomes fully self-sustaining over time.",
+        text: "Every CSR programme is designed backwards from day one with a clear transition roadmap. Every initiative becomes fully self-sustaining over time.",
       },
       {
         n: "03",
         title: "Complete transparency & accountability",
-        text: "True governance requires honest reporting. Our annual impact disclosures highlight operational challenges and key learnings alongside our successes ensuring total transparency for our partners and funders.",
+        text: "Our annual impact disclosures highlight operational challenges and key learnings alongside our successes ensuring total transparency for our partners and funders.",
       },
       {
         n: "04",
         title: "Grassroots execution",
-        text: "We hire local talent to drive our ground operations. Nine out of ten of our educators, healthcare workers, and project team members live within walking distance of their workplace, maximizing resource efficiency and community trust.",
+        text: "We hire local talent to drive our ground operations. Nine out of ten of our educators, healthcare workers, and project team members live within walking distance of their workplace.",
       },
     ],
   },
@@ -124,7 +124,7 @@ const DIRECTION_1: HomeCopy = {
     accent: "one interconnected arc.",
     sub: "Comprehensive solutions for long-term community empowerment.",
     body:
-      "Our core interventions are not isolated projects running in parallel. They are part of a fully integrated delivery model where each component reinforces the next: a nutritious meal sustains a focused child in class, and quality education builds the foundation for long-term employability. Under our Schedule VII-aligned framework, we fund and execute the entire value chain or none at all ensuring seamless execution, zero service gaps, and maximum return on CSR investment.",
+      "Our core interventions are not isolated projects running in parallel. They are part of a fully integrated delivery model where each component reinforces the next: a nutritious meal sustains a focused child in class, and quality education builds the foundation for long-term employability.",
   },
 
   stories: {
@@ -132,7 +132,7 @@ const DIRECTION_1: HomeCopy = {
     title: "Measuring progress through real lives.",
     sub: "Real-world case studies from our ground-level interventions.",
     body:
-      "Behind every metric lies an individual life, family, and community transformed. Explore how our integrated CSR interventions create long-term social value and self-sufficiency across Education, Healthcare, and Employability.",
+      "Explore how our integrated CSR interventions create long-term social value and self-sufficiency across Education, Healthcare, and Employability.",
     tag: "Education & Child Development",
     link: "View all case studies →",
   },
@@ -142,7 +142,7 @@ const DIRECTION_1: HomeCopy = {
     title: "Authentic field execution: a day across our centres.",
     sub: "Transparent, day-to-day project operations in action.",
     body:
-      "Real impact is built on daily consistency, not staged moments. Take an unfiltered look into everyday operations across our learning and healthcare centres where local teams deliver structured, measurable outcomes on the ground every single day.",
+      "Take an unfiltered look into everyday operations across our learning and healthcare centres where local teams deliver structured, measurable outcomes on the ground every single day.",
     caption: {
       k: "Operational reality",
       v: "Unscripted, everyday implementation across our 412 communities.",
@@ -154,7 +154,7 @@ const DIRECTION_1: HomeCopy = {
     title: "Supported by corporate leaders and individual visionaries.",
     sub: "A diversified funding structure for long-term independence and stability.",
     body:
-      "Our operations are sustained through a balanced funding ecosystem. We are trusted by 28 institutional and corporate CSR partners, alongside a growing network of over 11,000 individual monthly contributors giving under ₹1,000. This diversified model guarantees operational independence, financial stability, and continuous on-ground delivery across all project locations.",
+      "Our operations are sustained through a balanced funding ecosystem. We are trusted by 28 institutional and corporate CSR partners, alongside a growing network of over 11,000 individual monthly contributors giving under ₹1,000.",
     metrics: [
       { value: 28, suffix: "", label: "Institutional & CSR partners" },
       { value: 11000, suffix: "+", label: "Individual monthly donors" },
@@ -166,7 +166,7 @@ const DIRECTION_1: HomeCopy = {
     title: "Maximizing the impact of every contribution.",
     sub: "Clear returns on social investment for individuals and corporate partners.",
     lead:
-      "A contribution of ₹1,000 provides a child with a full month of quality education, daily nutritious weekday meals, learning resources, and dedicated support from certified local educators. Whether you are an individual supporter or a corporate leader seeking a compliant, high-impact CSR partner, your investment drives sustainable growth across underserved communities.",
+      "A contribution of ₹1,000 provides a child with a full month of quality education, daily nutritious weekday meals, learning resources, and dedicated support from certified local educators. Your investment drives sustainable growth across underserved communities.",
     primary: { href: "/donate", label: "Donate now (Tax exempt under 80G)" },
     secondary: { href: "/contact", label: "Connect with our CSR team" },
   },

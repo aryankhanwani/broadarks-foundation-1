@@ -69,7 +69,7 @@ export const PROGRAMS: Program[] = [
     headline: "Accessible learning infrastructure and bridge education",
     sub: "Settlement-based learning centres enabling school re-entry and continuous growth.",
     detail:
-      "We operate 63 learning centres directly inside settlements to eliminate transportation and financial barriers. Children previously out of school for two to three years complete specialized bridge classes to re-enter government schools at their age-appropriate grade. Each centre integrates a community lending library and is staffed by local educators residing within walking distance.",
+      "Children previously out of school for two to three years complete specialized bridge classes to re-enter government schools at their age-appropriate grade. Each centre integrates a community lending library and is staffed by local educators residing within walking distance.",
     image: IMG.classroomFloor,
     secondary: IMG.library,
     metrics: [
@@ -88,7 +88,7 @@ export const PROGRAMS: Program[] = [
     headline: "Preventive healthcare infrastructure and primary medical access",
     sub: "Mobile medical units and community health networks delivering last-mile care.",
     detail:
-      "Four mobile units and 180 trained community health workers serve wards located over an hour from the nearest medical facility. The operations focus on structured preventive care: antenatal consultations, anaemia screenings, vaccination tracking, and a reliable secondary referral pipeline.",
+      "Four mobile units serve wards located over an hour from the nearest medical facility. The operations focus on structured preventive care: antenatal consultations, anaemia screenings, vaccination tracking, and a reliable secondary referral pipeline.",
     image: IMG.clinicianPhone,
     secondary: IMG.careHands,
     metrics: [
@@ -107,7 +107,7 @@ export const PROGRAMS: Program[] = [
     headline: "Market-linked vocational training and independent enterprise aggregation",
     sub: "Sustainable income frameworks building self-reliant community cooperatives.",
     detail:
-      "We extend outcomes beyond vocational certification. Cohorts complete specialized training before transitioning directly into formal employment or registered producer collectives equipped with banking access and established market linkages. Women's producer groups across Jharkhand and Bihar now independently manage commercial negotiations and trade pricing.",
+      "Cohorts complete specialized training before transitioning directly into formal employment or registered producer collectives equipped with banking access and established market linkages. Women's producer groups across Jharkhand and Bihar now independently manage commercial negotiations and trade pricing.",
     image: IMG.workshop,
     secondary: IMG.collaborate,
     metrics: [
@@ -126,7 +126,7 @@ export const PROGRAMS: Program[] = [
     headline: "Upstream nutritional security and early childhood growth support",
     sub: "Community-run kitchens and vital nutritional interventions for foundational development.",
     detail:
-      "A hungry child cannot learn; consequently, nutrition sits upstream of every intervention we deploy. Community kitchens managed by local women provide hot meals directly at our learning centres, while active growth monitoring identifies and reverses nutritional wasting in its earliest stages.",
+      "Nutrition sits upstream of every intervention we deploy. Community kitchens managed by local women provide hot meals directly at our learning centres, while active growth monitoring identifies and reverses nutritional wasting in its earliest stages.",
     image: IMG.foodRelief,
     secondary: IMG.reliefTruck,
     metrics: [
@@ -145,7 +145,7 @@ export const PROGRAMS: Program[] = [
     headline: "Decentralized energy infrastructure and rural water stewardship",
     sub: "Community-managed clean energy and water systems engineered for long-term autonomy.",
     detail:
-      "We deploy solar micro-grids, rooftop installations for schools and clinics, and rainwater harvesting structures—each fully transferred to trained village committees responsible for ongoing maintenance. Our primary operational benchmark: every infrastructure installation must remain fully operational five years post-exit.",
+      "We deploy solar micro-grids, rooftop installations for schools and clinics, and rainwater harvesting structures, each fully transferred to trained village committees responsible for ongoing maintenance.",
     image: IMG.solar,
     secondary: IMG.sunsetFriends,
     metrics: [
