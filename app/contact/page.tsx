@@ -32,7 +32,7 @@ export default function ContactPage() {
         italic="Without automated delay."
         sub="Direct channels for partnership and stakeholder communication: responsive professional engagement and transparent financial inquiry support."
         lead="We welcome inquiries regarding strategic partnerships, volunteer opportunities, media engagements, or financial allocation transparency, with financial governance inquiries prioritized."
-        image={IMG.meetingRoom}
+        image={IMG.trainingGroup}
       />
 
       <section className="bg-white py-20 md:py-28">
@@ -51,8 +51,8 @@ export default function ContactPage() {
           <div className="lg:col-span-4 lg:col-start-9">
             <div className="lg:sticky lg:top-32">
               <RevealImage
-                id={IMG.volunteersGroup}
-                alt="The Broadarks field team at a community drive"
+                id={IMG.campBanner}
+                alt="Teachers and the Broadarks team after a vision screening training"
                 className="aspect-[4/5] w-full"
                 sizes="(max-width: 1024px) 100vw, 30vw"
               />

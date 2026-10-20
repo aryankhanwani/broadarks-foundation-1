@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
 import Logo from "./Logo";
+import { getLenis } from "./SmoothScroll";
 import { NAV, SITE } from "@/lib/content";
 
 export default function Nav() {
@@ -24,9 +25,21 @@ export default function Nav() {
 
   useEffect(() => {
     document.documentElement.style.overflow = open ? "hidden" : "";
+    if (open) getLenis()?.stop();
+    else getLenis()?.start();
     return () => {
       document.documentElement.style.overflow = "";
+      getLenis()?.start();
     };
+  }, [open]);
+
+  // The menu is mobile-only; if the window widens past it, release the page lock.
+  useEffect(() => {
+    if (!open) return;
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const close = () => mq.matches && setOpen(false);
+    mq.addEventListener("change", close);
+    return () => mq.removeEventListener("change", close);
   }, [open]);
 
   return (
@@ -124,6 +137,7 @@ export default function Nav() {
             animate={{ clipPath: "inset(0% 0% 0% 0%)" }}
             exit={{ clipPath: "inset(0% 0% 100% 0%)" }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            data-lenis-prevent
             className="fixed inset-0 z-40 flex flex-col justify-between gap-10 overflow-y-auto bg-ink px-5 pb-10 pt-24 text-white md:px-10 lg:hidden"
           >
             <nav className="flex flex-col">

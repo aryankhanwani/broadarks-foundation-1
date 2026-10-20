@@ -57,7 +57,7 @@ export default function DonatePage() {
         title="₹910 of every ₹1,000"
         italic="reaches the field."
         lead="Here is the other ₹90, itemised, before you give us anything. Monthly gifts are worth roughly four times a one-off to us — they let us hire teachers on real contracts."
-        image={IMG.kidsPointing}
+        image={IMG.newGlasses}
       />
 
       {/* how to give */}
@@ -138,7 +138,7 @@ export default function DonatePage() {
               />
               <Reveal delay={0.2}>
                 <RevealImage
-                  id={IMG.coinsChange}
+                  id={IMG.glassesKids}
                   alt=""
                   className="mt-12 hidden aspect-[4/3] w-full lg:block"
                   sizes="40vw"

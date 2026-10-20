@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Initials from "@/components/ui/Initials";
 import Link from "next/link";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
@@ -76,15 +77,7 @@ function Card({
 
           <div className="flex items-center justify-between gap-4 border-t border-line pt-5">
             <div className="flex items-center gap-3">
-              <span className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full">
-                <Image
-                  src={img(story.portrait, 200)}
-                  alt={story.name}
-                  fill
-                  sizes="44px"
-                  className="object-cover"
-                />
-              </span>
+              <Initials name={story.name} className="h-11 w-11 text-[0.8rem]" />
               <span className="text-sm">
                 <b className="block font-medium text-ink">{story.name}</b>
                 <span className="text-ink-50">{story.age} · {story.place}</span>

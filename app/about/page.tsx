@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import Initials from "@/components/ui/Initials";
 import PageHero from "@/components/ui/PageHero";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Reveal from "@/components/motion/Reveal";
@@ -8,7 +8,7 @@ import Parallax from "@/components/motion/Parallax";
 import CTABand from "@/components/CTABand";
 import Marquee from "@/components/motion/Marquee";
 import { TIMELINE, VALUES, TEAM, SITE } from "@/lib/content";
-import { IMG, img } from "@/lib/images";
+import { IMG } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -24,7 +24,7 @@ export default function AboutPage() {
         italic="built on grassroots proximity."
         sub="Scaling ground operations since 2014."
         lead="BroadArks Foundation originated in 2014 in Seelampur, East Delhi, serving forty children. Over twelve years of continuous growth, we have expanded into a multi-state implementation agency executing high-impact CSR programmes across nine states. Throughout our expansion, our foundational operating model has remained constant: maintain deep ground proximity, commit to long-term community presence, and build self-sustaining projects designed for local handover."
-        image={IMG.classroomFloor}
+        image={IMG.trainingHall}
         meta={[
           { k: "Years of continuous field execution", v: "12+" },
           { k: "States with active, compliant CSR operations", v: "9" },
@@ -75,8 +75,8 @@ export default function AboutPage() {
 
             <Reveal delay={0.16}>
               <RevealImage
-                id={IMG.townhall}
-                alt="A village committee meeting in progress"
+                id={IMG.trainingRows}
+                alt="Teachers at a student vision screening training"
                 className="my-12 aspect-[16/10] w-full"
                 sizes="(max-width: 1024px) 100vw, 55vw"
               />
@@ -100,9 +100,7 @@ export default function AboutPage() {
 
             <Reveal delay={0.16}>
               <div className="mt-12 flex items-center gap-4 border-t border-line pt-8">
-                <span className="relative h-14 w-14 overflow-hidden rounded-full">
-                  <Image src={img(IMG.p9, 200)} alt="" fill sizes="56px" className="object-cover" />
-                </span>
+                <Initials name="Nandini Roy" className="h-14 w-14 text-sm" />
                 <span className="text-sm">
                   <b className="block font-medium text-ink">Nandini Roy</b>
                   <span className="text-ink-50">Head of Programmes, on behalf of the team</span>
@@ -152,8 +150,8 @@ export default function AboutPage() {
               />
               <Parallax amount={30} className="mt-12 hidden lg:block">
                 <RevealImage
-                  id={IMG.library}
-                  alt="A lending library inside a learning centre"
+                  id={IMG.chartDemo}
+                  alt="A trainer demonstrates how to use an eye chart"
                   className="aspect-[4/5] w-full"
                   sizes="40vw"
                 />
@@ -194,13 +192,10 @@ export default function AboutPage() {
             {TEAM.map((m, i) => (
               <Reveal key={m.name} delay={i * 0.06}>
                 <div className="group">
-                  <div className="relative aspect-[4/5] overflow-hidden bg-sky-100">
-                    <Image
-                      src={img(m.img, 500)}
-                      alt={m.name}
-                      fill
-                      sizes="(max-width: 768px) 45vw, 16vw"
-                      className="object-cover grayscale transition-all duration-[1.2s] ease-[cubic-bezier(.16,1,.3,1)] group-hover:scale-105 group-hover:grayscale-0"
+                  <div className="relative flex aspect-[4/5] items-center justify-center overflow-hidden bg-sky-100">
+                    <Initials
+                      name={m.name}
+                      className="h-20 w-20 bg-white text-xl transition-transform duration-[1.2s] ease-[cubic-bezier(.16,1,.3,1)] group-hover:scale-105"
                     />
                   </div>
                   <h3 className="mt-4 text-[0.95rem] font-medium text-ink">{m.name}</h3>
@@ -225,7 +220,7 @@ export default function AboutPage() {
       </div>
 
       <CTABand
-        image={IMG.volunteersGroup}
+        image={IMG.schoolGroupLarge}
         eyebrow="Work with us"
         title="Targeted skill partnerships to expand operational efficacy."
         sub="Collaborating with domain experts to strengthen last-mile CSR infrastructure."

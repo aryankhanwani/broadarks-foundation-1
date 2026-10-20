@@ -32,14 +32,19 @@ export default function ProgramsScroll() {
   const progress = useTransform(scrollYProgress, [0.05, 0.74], ["0%", "100%"]);
 
   useEffect(() => {
-    const measure = () => {
-      const el = trackRef.current;
-      if (!el) return;
-      setDistance(Math.max(0, el.scrollWidth - window.innerWidth + 40));
-    };
+    const el = trackRef.current;
+    if (!el) return;
+    const measure = () => setDistance(Math.max(0, el.scrollWidth - window.innerWidth + 40));
     measure();
+    // Card widths follow the viewport height too, so watch the track itself
+    // rather than only window width.
+    const ro = new ResizeObserver(measure);
+    ro.observe(el);
     window.addEventListener("resize", measure);
-    return () => window.removeEventListener("resize", measure);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", measure);
+    };
   }, []);
 
   return (
@@ -93,15 +98,17 @@ export default function ProgramsScroll() {
 
       {/* desktop: pinned horizontal run */}
       <section ref={ref} className="relative hidden h-[420vh] bg-sand lg:block">
-        <div className="sticky top-0 flex h-screen flex-col justify-center overflow-hidden">
-          <div className="shell flex items-end justify-between pb-10 pt-24">
+        {/* --chrome is the height taken by the heading and progress bar; cards
+            get whatever is left, so short laptop screens never clip them. */}
+        <div className="sticky top-0 flex h-screen flex-col justify-center overflow-hidden [--chrome:22rem] [@media(max-height:760px)]:[--chrome:17.5rem]">
+          <div className="shell flex items-end justify-between pb-10 pt-24 [@media(max-height:760px)]:pb-6 [@media(max-height:760px)]:pt-20">
             <div>
               <p className="eyebrow mb-5 text-ink-50">
                 <span className="text-brand">03</span>
                 <span className="mx-3 inline-block h-px w-8 translate-y-[-3px] bg-ink/20" />
                 {C.eyebrow}
               </p>
-              <h2 className="display max-w-[16ch] text-[2.96rem] leading-[1.0] text-ink">
+              <h2 className="display max-w-[16ch] text-[2.96rem] leading-[1.0] text-ink [@media(max-height:760px)]:text-[2.4rem]">
                 {C.title}{" "}
                 <span className="serif text-[1.06em] italic text-brand">{C.accent}</span>
               </h2>
@@ -123,7 +130,7 @@ export default function ProgramsScroll() {
               <Link
                 key={p.slug}
                 href={`/work#${p.slug}`}
-                className="group relative w-[clamp(320px,29vw,440px)] shrink-0"
+                className="group relative w-[min(clamp(320px,29vw,440px),calc((100svh_-_var(--chrome))*0.75))] shrink-0"
               >
                 <div className="relative aspect-[3/4] overflow-hidden bg-ink">
                   <Image
@@ -141,7 +148,7 @@ export default function ProgramsScroll() {
 
                   <div className="absolute inset-x-5 bottom-5 text-white">
                     <h3 className="display text-[1.65rem] leading-tight">{p.title}</h3>
-                    <p className="mt-2 max-h-0 overflow-hidden text-[0.9rem] leading-relaxed text-white/80 opacity-0 transition-all duration-700 ease-[cubic-bezier(.16,1,.3,1)] group-hover:max-h-32 group-hover:opacity-100">
+                    <p className="mt-2 max-h-0 overflow-hidden [@media(max-height:760px)]:hidden text-[0.9rem] leading-relaxed text-white/80 opacity-0 transition-all duration-700 ease-[cubic-bezier(.16,1,.3,1)] group-hover:max-h-32 group-hover:opacity-100">
                       {p.blurb}
                     </p>
                     <div className="mt-4 flex gap-5 border-t border-white/20 pt-3">
@@ -174,7 +181,7 @@ export default function ProgramsScroll() {
             </div>
           </motion.div>
 
-          <div className="shell mt-10 pb-10">
+          <div className="shell mt-10 pb-10 [@media(max-height:760px)]:mt-6 [@media(max-height:760px)]:pb-6">
             <div className="h-px w-full bg-ink/10">
               <motion.div style={{ width: progress }} className="h-px bg-brand" />
             </div>

@@ -11,7 +11,7 @@ export default function Stats() {
   return (
     <section className="relative overflow-hidden bg-ink py-24 text-white md:py-32">
       <Image
-        src={img(IMG.handsCircle, 1800)}
+        src={img(IMG.womenHall, 1800)}
         alt=""
         fill
         sizes="100vw"

@@ -53,7 +53,7 @@ export default function Hero() {
             loop
             playsInline
             preload="auto"
-            poster={img(IMG.kidsGroup, 1920)}
+            poster={img(IMG.heroPoster, 1920)}
             aria-hidden
             className="h-full w-full object-cover"
           >

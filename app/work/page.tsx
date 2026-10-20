@@ -47,7 +47,7 @@ export default function WorkPage() {
         italic="execution arc."
         sub="Comprehensive CSR intervention chains designed for complete community transformation."
         lead="Our initiatives do not operate in silos. Nutritional support sustains educational attendance; education builds viable livelihoods; and reliable household electrification enables evening study. We fund and execute the entire continuum, ensuring zero structural gaps."
-        image={IMG.kidsBackpacks}
+        image={IMG.queueTrees}
         meta={[
           { k: "Communities", v: "412" },
           { k: "Learning centres", v: "63" },
@@ -175,7 +175,7 @@ export default function WorkPage() {
       </section>
 
       <CTABand
-        image={IMG.workshop}
+        image={IMG.seatedWomen}
         eyebrow="Fund a pillar"
         title="Targeted capital deployment across the implementation chain."
         sub="Designated institutional grants and high-accountability CSR funding."

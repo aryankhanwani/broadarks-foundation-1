@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import Initials from "@/components/ui/Initials";
 import Link from "next/link";
 import PageHero from "@/components/ui/PageHero";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -8,7 +8,7 @@ import RevealImage from "@/components/motion/RevealImage";
 import CTABand from "@/components/CTABand";
 import Counter from "@/components/motion/Counter";
 import { STORIES, STATS } from "@/lib/content";
-import { IMG, img } from "@/lib/images";
+import { IMG } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Impact Stories",
@@ -25,7 +25,7 @@ export default function ImpactPage() {
         italic="in personal transformation."
         sub="Individual case outcomes driving macro community metrics."
         lead="We maintain strict aggregate reporting to fulfill partner compliance standards. However, every data point represents a direct human outcome: an individual returning to formal education or independently establishing commercial terms in the market. Below are five representative case studies."
-        image={IMG.kidsPlaying}
+        image={IMG.receivingGlasses}
       />
 
       {/* numbers strip */}
@@ -62,15 +62,7 @@ export default function ImpactPage() {
                     sizes="(max-width: 1024px) 100vw, 48vw"
                   />
                   <div className="mt-5 flex items-center gap-4">
-                    <span className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full border-2 border-white shadow-lg">
-                      <Image
-                        src={img(s.portrait, 240)}
-                        alt={s.name}
-                        fill
-                        sizes="64px"
-                        className="object-cover"
-                      />
-                    </span>
+                    <Initials name={s.name} className="h-16 w-16 border-2 border-white shadow-lg text-sm" />
                     <div>
                       <p className="display text-[1.17rem] leading-none text-ink">{s.name}</p>
                       <p className="mt-1.5 text-sm text-ink-50">
@@ -156,7 +148,7 @@ export default function ImpactPage() {
       </section>
 
       <CTABand
-        image={IMG.handsReaching}
+        image={IMG.studentsGroup}
         eyebrow="Add to this page"
         title="Direct support that changes a day."
         sub="Simple monthly giving that creates lasting change."

@@ -1,9 +1,8 @@
-import Image from "next/image";
+import Initials from "@/components/ui/Initials";
 import Marquee from "@/components/motion/Marquee";
 import Reveal from "@/components/motion/Reveal";
 import Counter from "@/components/motion/Counter";
 import { PARTNERS } from "@/lib/content";
-import { IMG, img } from "@/lib/images";
 import { HOME_COPY } from "@/lib/homeCopy";
 
 const C = HOME_COPY.partners;
@@ -43,15 +42,7 @@ export default function Partners() {
               for it.”
             </blockquote>
             <figcaption className="mt-7 flex items-center gap-3">
-              <span className="relative h-11 w-11 overflow-hidden rounded-full">
-                <Image
-                  src={img(IMG.p4, 200)}
-                  alt=""
-                  fill
-                  sizes="44px"
-                  className="object-cover"
-                />
-              </span>
+              <Initials name="Priya Raghunath" className="h-11 w-11 text-[0.8rem]" />
               <span className="text-sm">
                 <b className="block font-medium text-ink">Priya Raghunath</b>
                 <span className="text-ink-50">CSR Lead, Tata Capital</span>
