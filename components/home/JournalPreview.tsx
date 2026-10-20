@@ -31,7 +31,7 @@ export default function JournalPreview() {
 
         <div className="grid gap-12 md:grid-cols-3 md:gap-8">
           {POSTS.map((p, i) => (
-            <Reveal key={p.slug} delay={i * 0.1}>
+            <Reveal key={p.slug} delay={i * 0.1} className="md:row-span-4 md:grid md:grid-rows-subgrid md:gap-y-0">
               <PostCard post={p} />
             </Reveal>
           ))}

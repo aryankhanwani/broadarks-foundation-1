@@ -46,9 +46,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${display.variable} ${serif.variable} h-full`}
+      className={`${geistSans.variable} ${geistMono.variable} ${display.variable} ${serif.variable}`}
     >
-      <body className="min-h-full">
+      <body className="min-h-screen">
         <SmoothScroll />
         <ScrollProgress />
         <Nav />
